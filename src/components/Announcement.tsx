@@ -1,8 +1,8 @@
 const Announcement = () => {
   return (
-    <div className="alert alert-warning h-12 mb-1 rounded-t-none shadow-lg flex justify-center">
+    <div className="alert alert-warning h-7  rounded-none shadow-lg flex justify-center">
       <div className="">
-        <span>Warning: Invalid email address!</span>
+        <span>£1 Fish, £1 Fish</span>
       </div>
     </div>
   );
