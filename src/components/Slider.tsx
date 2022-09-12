@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import carousel from '../data/data';
+import { carousel } from '../data/data';
 import { ICarouselData } from '../data/data';
 
 const Slider = () => {
