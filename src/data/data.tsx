@@ -10,6 +10,8 @@ export interface ICarouselData {
 export interface ICatagories {
   id: number;
   name: string;
+  img: string;
+  alt: string;
 }
 
 const carousel: ICarouselData[] = [
@@ -23,33 +25,38 @@ const carousel: ICarouselData[] = [
   },
   {
     id: 2,
-    img: 'https://img.freepik.com/free-vector/set-white-paper-stickers_107791-6052.jpg?t=st=1662997683~exp=1662998283~hmac=0800ac5312ff3891b44032935f212cfb720d06893df2c005a4badc2bb5e73e97',
+    img: 'https://img.freepik.com/free-vector/collection-realistic-paper-stickers_23-2148987749.jpg?w=1380&t=st=1663006802~exp=1663007402~hmac=34565c8d1e655e36cad0ee1a3fa3257ee2beeb6aed4288881fb0d6e413d09fe4',
     title: 'Mockups',
     description: "Send us your designs and we'll make you an awesome mockup!",
     alt: 'Sticker mockups',
   },
   {
     id: 3,
-    img: 'https://img.artpal.com/980411/18-19-3-21-13-8-7m.jpg',
-    title: 'Tractor',
-    description: 'The most awesome tractor you ever did see',
-    season: 'Autumn',
-    alt: 'Autumn Tractor',
+    img: 'https://img.freepik.com/free-vector/acid-travel-stickers-set_52683-83638.jpg?w=1380&t=st=1663006929~exp=1663007529~hmac=a24641b5251d830c512d6149c0ed0e8e452484100b5013950a4cc9d3bd89d916',
+    title: 'Custom',
+    description: 'We can make any sticker you want, just send us a message!',
+    alt: 'World stickers',
   },
 ];
 
 const catagories: ICatagories[] = [
   {
     id: 1,
-    name: 'Sticker packs',
+    name: 'Sticker Packs',
+    img: 'https://img.freepik.com/free-vector/naive-halloween-stickers-collection_52683-68866.jpg?w=1380&t=st=1663005053~exp=1663005653~hmac=0e3afd22fad557ade1965d131abc485ffd61e12f184846ec5b50c64babf07de6',
+    alt: 'Sticker packs',
   },
   {
     id: 2,
-    name: 'Mockups',
+    name: 'Custom Stickers',
+    img: 'https://img.freepik.com/free-psd/top-view-sticker-collection-mock-up_23-2148884462.jpg?w=1380&t=st=1663004888~exp=1663005488~hmac=35b291feeca13904ac98bbcf5ff18c7452fb89e617c1ac858c08b2552f2f6435',
+    alt: 'CustomStickers',
   },
   {
     id: 3,
     name: 'Individual Stickers',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/feature/slider/src/assets/cannon.jpg?raw=true',
+    alt: 'IndividualStickers',
   },
 ];
 export { carousel, catagories };
