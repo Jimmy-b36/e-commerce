@@ -17,7 +17,7 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: ['autumn'],
+    themes: ['retro'],
   },
   plugins: [require('daisyui'), require('tw-elements/dist/plugin')],
 };
