@@ -1,6 +1,6 @@
 const NavBar = () => {
   return (
-    <div className="navbar min-h-[5em] bg-primary text-primary-content rounded-b-lg">
+    <div className="navbar min-h-[5em] bg-primary text-primary-content ">
       <div className="navbar-start">
         <div className="dropdown ">
           <label tabIndex={0} className="btn lg:hidden xl:hidden">
