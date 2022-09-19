@@ -1,7 +1,8 @@
 const NavBar = () => {
   return (
-    <div className="navbar min-h-[5em] bg-primary text-primary-content rounded-b-lg">
+    <div className="navbar min-h-[5em] bg-primary text-primary-content ">
       <div className="navbar-start">
+        {/* Responsive */}
         <div className="dropdown ">
           <label tabIndex={0} className="btn lg:hidden xl:hidden">
             <i className="fa-solid fa-magnifying-glass"></i>
@@ -13,46 +14,44 @@ const NavBar = () => {
             <form action="" method="get">
               <input
                 type="text"
-                placeholder="Search for a Tractor"
-                className="input w-full max-w-xs xs:nav-bar-end text-slate-600"
+                placeholder="Search for Stickers"
+                className="input w-full max-w-xs xs:nav-bar-end text-slate-200 bg-white"
               />
             </form>
           </ul>
         </div>
-
+        {/* Standard */}
         <label
           htmlFor=""
           className=" lg:input-group xl:input-group max-w-xs  xs:nav-bar-end text-slate-600 "
         >
-          <span className="lg:flex xl:flex hidden">
-            <i className="fa-solid fa-magnifying-glass"></i>
+          <span className="lg:flex xl:flex hidden bg-slate-600">
+            <i className="fa-solid fa-magnifying-glass "></i>
           </span>
           <form action="" method="get">
             <input
               type="text"
-              placeholder="Search for a Tractor"
-              className="input w-full max-w-xs md:hidden lg:flex xl:flex hidden xs:nav-bar-end text-slate-600 "
+              placeholder="Search for Stickers"
+              className="input w-full max-w-xs md:hidden lg:flex xl:flex hidden xs:nav-bar-end text-slate-600 bg-white"
             />
           </form>
         </label>
       </div>
 
       <div className="navbar-center flex xs:justify-start xs:-ml-12 ml-0 text-slate-200">
-        <a className="btn btn-ghost text-bold text-3xl text-slate-200">
-          Tractors.
-        </a>
+        <a className="btn btn-ghost text-bold text-3xl text-white">Stickers.</a>
       </div>
       <div className="navbar-end">
         <div className="dropdown dropdown-end">
           <label
             tabIndex={0}
-            className="btn m-1 hidden md:flex lg:flex xl:flex"
+            className="btn m-1 hidden md:flex lg:flex xl:flex text-white bg-slate-600 hover:bg-slate-800"
           >
             Login/Sign up
           </label>
           <label
             tabIndex={0}
-            className="btn m-1 flex md:hidden lg:hidden xl:hidden text-slate-100 px-5"
+            className="btn m-1 flex md:hidden lg:hidden xl:hidden text-white px-5 "
           >
             <i className="fa-solid fa-user"></i>
           </label>
@@ -70,13 +69,13 @@ const NavBar = () => {
           <span className="indicator-item badge badge-secondary mr-3 xs:mr-1">
             3
           </span>
-          <button className="btn text-slate-100 mr-2 xs:mr-0 px-5">
+          <button className="btn text-white mr-2 xs:mr-0 px-5 bg-slate-600 hover:bg-slate-800">
             <i className="fa-solid fa-cart-shopping"></i>
           </button>
         </div>
         <img
           className="h-10 w-auto mb-[3px] rounded-md xs:hidden s:hidden"
-          src={require('../assets/logo-white.png')}
+          src="https://github.com/Jimmy-b36/e-commerce/blob/feature/slider/src/assets/images/logo-white.png?raw=true"
           alt="tractor harvesting"
         />
       </div>

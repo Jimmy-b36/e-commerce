@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    './node_modules/tw-elements/dist/js/**/*.js',
+  ],
   theme: {
     screens: {
       xs: { max: '428px' },
@@ -14,7 +17,7 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: ['autumn'],
+    themes: ['retro'],
   },
-  plugins: [require('daisyui')],
+  plugins: [require('daisyui'), require('tw-elements/dist/plugin')],
 };
