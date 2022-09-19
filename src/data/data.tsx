@@ -55,8 +55,9 @@ const catagories: ICatagories[] = [
   {
     id: 3,
     name: 'Individual Stickers',
-    img: 'https://github.com/Jimmy-b36/e-commerce/blob/feature/slider/src/assets/cannon.jpg?raw=true',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/feature/slider/src/assets/images/cannon.jpg?raw=true',
     alt: 'IndividualStickers',
   },
 ];
+
 export { carousel, catagories };
