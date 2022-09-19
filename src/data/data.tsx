@@ -14,6 +14,15 @@ export interface ICatagories {
   alt: string;
 }
 
+export interface IPopularProducts {
+  id: number;
+  img: string;
+  title: string;
+  description: string;
+  price: number;
+  alt: string;
+}
+
 const carousel: ICarouselData[] = [
   {
     id: 1,
@@ -55,9 +64,16 @@ const catagories: ICatagories[] = [
   {
     id: 3,
     name: 'Individual Stickers',
-    img: 'https://github.com/Jimmy-b36/e-commerce/blob/feature/slider/src/assets/images/cannon.jpg?raw=true',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/cannon.jpg?raw=true',
     alt: 'IndividualStickers',
   },
 ];
 
-export { carousel, catagories };
+const popularProducts = [
+  {
+    id: 1,
+    img: 'https://img.freepik.com/free-vector/naive-halloween-stickers-collection_52683-68866.jpg?w=1380&t=st=1663005053~exp=1663005653~hmac=0e3afd22fad557ade1965d131abc485ffd61e12f184846ec5b50c64babf07de6',
+  },
+];
+
+export { carousel, catagories, popularProducts };
