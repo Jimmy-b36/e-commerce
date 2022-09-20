@@ -102,6 +102,14 @@ const popularProducts = [
     price: 10,
     alt: 'Rad sticker',
   },
+  {
+    id: 5,
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/pineapple-supply-co-CXGf4JgtaXs-unsplash.jpg?raw=true',
+    title: 'Pineapple sticker',
+    description: 'This is a pineapple sticker',
+    price: 10,
+    alt: 'Pineapple sticker',
+  },
 ];
 
 export { carousel, catagories, popularProducts };
