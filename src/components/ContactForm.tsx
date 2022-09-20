@@ -56,7 +56,7 @@ const ContactForm = () => {
                     <br />
                     <button
                       onClick={() => setImage(null)}
-                      className="btn 0 hover:bg-slate-800 text-white mt-4"
+                      className="btn bg-slate-500 hover:bg-slate-800 text-white mt-4"
                     >
                       Remove
                     </button>
@@ -77,7 +77,7 @@ const ContactForm = () => {
               <input
                 type="submit"
                 value="Submit"
-                className="btn 0 hover:bg-slate-800 text-white mt-5 w-1/3"
+                className="btn bg-slate-500 hover:bg-slate-800 text-white mt-5 w-1/3"
               />
             </div>
           </form>
