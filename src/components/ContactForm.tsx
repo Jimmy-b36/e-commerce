@@ -4,10 +4,8 @@ const ContactForm = () => {
   const [image, setImage] = useState<File | null>(null);
   return (
     <>
-      <p className="text-[90px] flex justify-center bg-slate-50 pt-8">
-        Contact us
-      </p>
-      <div className="flex justify-center bg-slate-50">
+      <p className="text-[90px] flex justify-center  pt-8">Contact us</p>
+      <div className="flex justify-center ">
         <div className="card card-compact w-2/3 p-14 shadow bg-primary text-primary-content m-10 flex items-center justify-center">
           <form action="/" className="w-full">
             <div className="w-full flex flex-row">
@@ -66,7 +64,7 @@ const ContactForm = () => {
                 ) : (
                   <input
                     type="file"
-                    className="btn bg-slate-500 hover:bg-slate-800 text-white"
+                    className="btn 0 hover:bg-slate-800 text-white"
                     onChange={(e: React.ChangeEvent) => {
                       const target = e.target as HTMLInputElement;
                       target.files && setImage(target.files[0]);

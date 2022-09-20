@@ -72,7 +72,43 @@ const catagories: ICatagories[] = [
 const popularProducts = [
   {
     id: 1,
-    img: 'https://img.freepik.com/free-vector/naive-halloween-stickers-collection_52683-68866.jpg?w=1380&t=st=1663005053~exp=1663005653~hmac=0e3afd22fad557ade1965d131abc485ffd61e12f184846ec5b50c64babf07de6',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/kasturi-roy-caRKch3FR9Q-unsplash.jpg?raw=true',
+    title: 'Sticker Pack',
+    description: 'This is a sticker pack',
+    price: 10,
+    alt: 'Sticker Pack',
+  },
+  {
+    id: 2,
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/done-by-alex-gQMQjJiUGyo-unsplash.jpg?raw=true',
+    title: 'Van sticker',
+    description: 'This is a van sticker',
+    price: 10,
+    alt: 'Van sticker',
+  },
+  {
+    id: 3,
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/mk-2-zzHJ3VSKrZg-unsplash%203.jpg?raw=true',
+    title: 'Rocket sticker',
+    description: 'This is a rocket sticker',
+    price: 10,
+    alt: 'Rocket sticker',
+  },
+  {
+    id: 4,
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/mk-2-zzHJ3VSKrZg-unsplash%204.jpg?raw=true',
+    title: 'Rad sticker',
+    description: 'This is a rad sticker',
+    price: 10,
+    alt: 'Rad sticker',
+  },
+  {
+    id: 5,
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/pineapple-supply-co-CXGf4JgtaXs-unsplash.jpg?raw=true',
+    title: 'Pineapple sticker',
+    description: 'This is a pineapple sticker',
+    price: 10,
+    alt: 'Pineapple sticker',
   },
 ];
 

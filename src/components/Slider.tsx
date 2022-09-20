@@ -30,7 +30,7 @@ const Slider = () => {
   }, [handleKeyPress]);
 
   return (
-    <div className="bg-slate-50">
+    <div>
       <div className="flex absolute justify-between w-full items-center h-full">
         <button
           className="btn z-10 ml-10 bg-slate-600 hover:bg-slate-800 text-white"
@@ -48,9 +48,10 @@ const Slider = () => {
       <div className="flex flex-nowrap overflow-hidden">
         {carousel.map((item: ICarouselData, index: number) => (
           <div
+            // for some reason I have to initiate the translate-x to 100%/200% to get the slider working
             className={
               'h-screen w-screen flex items-center flex-row duration-500 ease-in-out shrink-0 justify-center transition ' +
-              '-translate-x-' +
+              '-translate-x-' /* [100%] [200%] */ +
               '[' +
               currentIndex * 100 +
               '%' +
