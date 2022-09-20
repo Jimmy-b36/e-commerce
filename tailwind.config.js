@@ -18,6 +18,12 @@ module.exports = {
       xl: { min: '1024px' },
     },
     extend: {
+      fontSize: {
+        heading: '70px',
+      },
+      colors: {
+        container: '#ffe4e6',
+      },
       fontFamily: { urbanist: ['Urbanist', 'sans-serif'] },
     },
   },

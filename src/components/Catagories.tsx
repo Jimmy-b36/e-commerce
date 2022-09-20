@@ -2,8 +2,8 @@ import { catagories } from '../data/data';
 import { ICatagories } from '../data/data';
 const Catagories = () => {
   return (
-    <>
-      <p className="text-[75px] flex justify-center  p-5">Catagories</p>
+    <div className="bg-container p-5 ">
+      <p className="text-[75px] flex justify-center p-5">Catagories</p>
       <div className="flex flex-row justify-between items-center p-5 ">
         {catagories.map((item: ICatagories, index: number) => (
           <a
@@ -22,7 +22,7 @@ const Catagories = () => {
           </a>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
