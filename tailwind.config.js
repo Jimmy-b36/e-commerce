@@ -4,6 +4,11 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
     './node_modules/tw-elements/dist/js/**/*.js',
   ],
+  safelist: [
+    '-translate-x-[100%]',
+    '-translate-x-[200%]',
+    '-translate-x-[300%]',
+  ],
   theme: {
     screens: {
       xs: { max: '428px' },
@@ -26,7 +31,7 @@ module.exports = {
 
           accent: '#fed7aa',
 
-          neutral: '#7D7259',
+          neutral: '#4b5563',
 
           'base-100': '#f3f4f6',
 
