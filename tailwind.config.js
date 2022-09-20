@@ -17,7 +17,29 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: ['retro'],
+    themes: [
+      {
+        mytheme: {
+          primary: '#EF9995',
+
+          secondary: '#A4CBB4',
+
+          accent: '#fed7aa',
+
+          neutral: '#7D7259',
+
+          'base-100': '#f3f4f6',
+
+          info: '#2463EB',
+
+          success: '#16A249',
+
+          warning: '#DB7706',
+
+          error: '#DC2828',
+        },
+      },
+    ],
   },
   plugins: [require('daisyui'), require('tw-elements/dist/plugin')],
 };
