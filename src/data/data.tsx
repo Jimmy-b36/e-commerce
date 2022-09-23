@@ -14,13 +14,15 @@ export interface ICatagories {
   alt: string;
 }
 
-export interface IPopularProducts {
+export interface IProducts {
   id: number;
   img: string;
   title: string;
   description: string;
   price: number;
   alt: string;
+  category: string;
+  popular: boolean;
 }
 
 const carousel: ICarouselData[] = [
@@ -69,7 +71,7 @@ const catagories: ICatagories[] = [
   },
 ];
 
-const popularProducts = [
+const products: IProducts[] = [
   {
     id: 1,
     img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/kasturi-roy-caRKch3FR9Q-unsplash.jpg?raw=true',
@@ -77,6 +79,8 @@ const popularProducts = [
     description: 'This is a sticker pack',
     price: 10,
     alt: 'Sticker Pack',
+    category: 'Sticker packs',
+    popular: true,
   },
   {
     id: 2,
@@ -85,6 +89,8 @@ const popularProducts = [
     description: 'This is a van sticker',
     price: 10,
     alt: 'Van sticker',
+    category: 'Single stickers',
+    popular: true,
   },
   {
     id: 3,
@@ -93,6 +99,8 @@ const popularProducts = [
     description: 'This is a rocket sticker',
     price: 10,
     alt: 'Rocket sticker',
+    category: 'Single stickers',
+    popular: true,
   },
   {
     id: 4,
@@ -101,6 +109,8 @@ const popularProducts = [
     description: 'This is a rad sticker',
     price: 10,
     alt: 'Rad sticker',
+    category: 'Single stickers',
+    popular: false,
   },
   {
     id: 5,
@@ -109,7 +119,9 @@ const popularProducts = [
     description: 'This is a pineapple sticker',
     price: 10,
     alt: 'Pineapple sticker',
+    category: 'Single stickers',
+    popular: false,
   },
 ];
 
-export { carousel, catagories, popularProducts };
+export { carousel, catagories, products };
