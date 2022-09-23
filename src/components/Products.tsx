@@ -5,7 +5,7 @@ const Products = () => {
   return (
     <div>
       <p className="flex justify-center text-[75px] p-5 mt-4">
-        Popular products
+        Popular productsi
       </p>
       <div className="flex justify-between flex-wrap p-5">
         {popularProducts.map((item: IPopularProducts, index: number) => (
