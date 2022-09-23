@@ -1,7 +1,7 @@
 import NavBar from '../components/NavBar';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
-import Products from '../components/Products';
+import Products from '../components/ProductPages/Products';
 
 const ProductList = () => {
   return (

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IProducts } from '../data/data';
+import { IProducts } from '../../data/data';
 
 const Product = (props: IProducts) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);

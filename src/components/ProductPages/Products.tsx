@@ -1,6 +1,6 @@
 import Product from './Product';
-import { products } from '../data/data';
-import { IProducts } from '../data/data';
+import { products } from '../../data/data';
+import { IProducts } from '../../data/data';
 import { useState } from 'react';
 const Products = () => {
   const [productCategory, setProductCategory] =

@@ -1,5 +1,5 @@
-import { products } from '../data/data';
-import { IProducts } from '../data/data';
+import { products } from '../../data/data';
+import { IProducts } from '../../data/data';
 import Product from './Product';
 const PopularProducts = () => {
   return (
