@@ -3,7 +3,8 @@ import { products } from '../data/data';
 import { IProducts } from '../data/data';
 import { useState } from 'react';
 const Products = () => {
-  const [productCategory, setProductCategory] = useState<string>('');
+  const [productCategory, setProductCategory] =
+    useState<string>('All products');
 
   const onChangeHandler = (e: React.ChangeEvent) => {
     setProductCategory((e.target as HTMLInputElement).value);
@@ -24,14 +25,17 @@ const Products = () => {
           <option disabled selected>
             Category
           </option>
-          <option>Single stickers</option>
-          <option>Sticker packs</option>
+          <option value={'All products'}>All products</option>
+          <option value={'Single stickers'}>Single stickers</option>
+          <option value={'Sticker packs'}>Sticker packs</option>
         </select>
       </div>
 
       <div className="flex justify-between flex-wrap p-5">
         {products.map((item: IProducts, index: number) =>
-          item.category === productCategory ? (
+          productCategory === 'All products' ? (
+            <Product {...item} key={index} />
+          ) : item.category === productCategory ? (
             <Product {...item} key={index} />
           ) : null
         )}
