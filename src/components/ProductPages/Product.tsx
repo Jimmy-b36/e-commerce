@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { IPopularProducts } from '../data/data';
+import { IProducts } from '../../data/data';
 
-const Product = (props: IPopularProducts) => {
+const Product = (props: IProducts) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
