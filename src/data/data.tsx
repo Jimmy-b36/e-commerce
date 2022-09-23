@@ -21,6 +21,7 @@ export interface IPopularProducts {
   description: string;
   price: number;
   alt: string;
+  category: string;
 }
 
 const carousel: ICarouselData[] = [
@@ -77,6 +78,7 @@ const popularProducts = [
     description: 'This is a sticker pack',
     price: 10,
     alt: 'Sticker Pack',
+    category: 'Sticker Pack',
   },
   {
     id: 2,
@@ -85,6 +87,7 @@ const popularProducts = [
     description: 'This is a van sticker',
     price: 10,
     alt: 'Van sticker',
+    category: 'Single sticker',
   },
   {
     id: 3,
@@ -93,6 +96,7 @@ const popularProducts = [
     description: 'This is a rocket sticker',
     price: 10,
     alt: 'Rocket sticker',
+    category: 'Single sticker',
   },
   {
     id: 4,
@@ -101,6 +105,7 @@ const popularProducts = [
     description: 'This is a rad sticker',
     price: 10,
     alt: 'Rad sticker',
+    category: 'Single sticker',
   },
   {
     id: 5,
@@ -109,6 +114,7 @@ const popularProducts = [
     description: 'This is a pineapple sticker',
     price: 10,
     alt: 'Pineapple sticker',
+    category: 'Single sticker',
   },
 ];
 
