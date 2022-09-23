@@ -1,5 +1,3 @@
-import Products from '../components/PopularProducts';
-
 export interface ICarouselData {
   id: number;
   img: string;
