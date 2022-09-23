@@ -5,6 +5,7 @@ import Catagories from '../components/Catagories';
 import ContactForm from '../components/ContactForm';
 import Products from '../components/Products';
 import Newsletter from '../components/Newsletter';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Catagories />
       <Products />
       <Newsletter />
+      <Footer />
     </>
   );
 };
