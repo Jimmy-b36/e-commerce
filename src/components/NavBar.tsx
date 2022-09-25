@@ -1,3 +1,4 @@
+import Login from './Login';
 const NavBar = () => {
   return (
     <div className="navbar min-h-[5em] bg-primary text-primary-content ">
@@ -57,11 +58,10 @@ const NavBar = () => {
           </label>
           <div
             tabIndex={0}
-            className="dropdown-content card card-compact w-64 p-2 shadow bg-primary text-primary-content"
+            className="dropdown-content card w-64 card-compact  p-2 shadow bg-[#E2443C] text-primary-content"
           >
-            <div className="card-body">
-              <h3 className="card-title">Card title!</h3>
-              <p>you can use any element as a dropdown.</p>
+            <div className="card-body ">
+              <Login />
             </div>
           </div>
         </div>
