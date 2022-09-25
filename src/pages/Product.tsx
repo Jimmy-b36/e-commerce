@@ -11,12 +11,10 @@ const Product = () => {
   const quantityHandler = (direction: string) => {
     let newQuantity = quantity;
     if (direction === 'up') {
-      if (quantity >= 5) return;
-      setQuantity(newQuantity + 1);
+      quantity >= 5 ? (newQuantity = 5) : setQuantity(newQuantity + 1);
     }
     if (direction === 'down') {
-      if (quantity <= 1) return;
-      setQuantity(newQuantity - 1);
+      quantity <= 1 ? (newQuantity = 1) : setQuantity(newQuantity - 1);
     }
   };
   return (
@@ -27,7 +25,10 @@ const Product = () => {
         {products.map(
           (item: IProducts, index: number) =>
             item.title === 'Van sticker' && (
-              <div className="flex justify-center items-center flex-col w-full">
+              <div
+                className="flex justify-center items-center flex-col w-full"
+                key={index}
+              >
                 <div className="w-3/4">
                   <p className="text-heading flex justify-center">
                     {item.title}
@@ -47,7 +48,6 @@ const Product = () => {
                       </p>
                       <p className="text-bold text-xl pb-5">${item.price}</p>
                       <div className="flex flex-row">
-                        {/* need to add useState to set quantity */}
                         <button onClick={() => quantityHandler('down')}>
                           <i className="fa-solid fa-minus pr-2"></i>
                         </button>
