@@ -11,7 +11,7 @@ const Registration = () => {
       <Announcement />
       <NavBar />
       <div className="flex justify-center items-center flex-col w-full">
-        <div className="w-3/4 flex flex-col items-center">
+        <div className="w-3/4 flex flex-col items-center mt-5">
           <p className="text-heading flex justify-center">Registration</p>
           <div className="card w-1/2 justify-center items-center bg-base-100 drop-shadow-my-card p-2 m-10">
             <div className="card-body w-3/4">
