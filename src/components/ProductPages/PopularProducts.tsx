@@ -4,7 +4,9 @@ import Product from './Product';
 const PopularProducts = () => {
   return (
     <div>
-      <p className="flex justify-center text-heading">Popular Products</p>
+      <p className="flex justify-center xs:text-3xl sm:text-3xl text-heading pt-5">
+        Popular Products
+      </p>
       <div className="flex justify-between flex-wrap p-5">
         {products.map(
           (item: IProducts, index: number) =>

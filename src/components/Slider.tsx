@@ -30,8 +30,8 @@ const Slider = () => {
   }, [handleKeyPress]);
 
   return (
-    <div>
-      <div className="flex absolute justify-between w-full items-center h-full">
+    <div className="lg:hidden md:hidden sm:hidden xs:hidden">
+      <div className="flex absolute justify-between w-full items-center h-full ">
         <button
           className="btn z-10 ml-10 bg-slate-600 hover:bg-slate-800 text-white"
           onClick={() => handleClick('prev')}
@@ -45,7 +45,7 @@ const Slider = () => {
           <i className="fa-solid fa-arrow-right text-2xl"></i>
         </button>
       </div>
-      <div className="flex flex-nowrap overflow-hidden">
+      <div className="flex flex-nowrap overflow-hidden ">
         {carousel.map((item: ICarouselData, index: number) => (
           <div
             // for some reason I have to initiate the translate-x to 100%/200% to get the slider working
@@ -62,7 +62,7 @@ const Slider = () => {
             <img
               src={item.img}
               alt={item.alt}
-              className="h-2/3 w-auto rounded-3xl mb-2 mask overflow-hidden shrink-0 mr-4 object-cover"
+              className="h-2/3 1/3 w-auto rounded-3xl mb-2 mask overflow-hidden shrink-0 mr-4 object-cover"
             />
             <div className="flex flex-col justify-center -mt-[100px] h-full items-center">
               <p className="text-[90px]">
