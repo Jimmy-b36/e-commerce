@@ -12,8 +12,16 @@ const Login = () => {
           placeholder="Password"
           className="input input-bordered w-full max-w-xs m-2"
         />
-
-        <input type="submit" value="Submit" className="btn mt-2 text-white " />
+        <div className="flex flex-row">
+          <a href="" className="btn text-white mt-2 mx-3">
+            Sign up
+          </a>
+          <input
+            type="submit"
+            value="Log in"
+            className="btn mt-2 mx-3 text-white "
+          />
+        </div>
         <a href="" className="mt-2 underline">
           Forgot password?
         </a>
