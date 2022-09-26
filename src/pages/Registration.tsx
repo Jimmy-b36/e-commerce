@@ -13,7 +13,7 @@ const Registration = () => {
       <div className="flex justify-center items-center flex-col w-full">
         <div className="w-3/4 flex flex-col items-center">
           <p className="text-heading flex justify-center">Registration</p>
-          <div className="card w-1/2 justify-center items-center bg-base-100 shadow-xl p-2 m-5">
+          <div className="card w-1/2 justify-center items-center bg-base-100 drop-shadow-my-card p-2 m-10">
             <div className="card-body w-3/4">
               <div className="card-header flex justify-center text-2xl">
                 Create an account
