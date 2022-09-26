@@ -1,19 +1,15 @@
 import { useState, useEffect } from 'react';
 import { IProducts } from '../../data/data';
 
-const Product = (props: IProducts) => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+interface IProductProps extends IProducts {
+  isMobile?: boolean;
+}
+
+const Product = (props: IProductProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const handleResize = () => {
-    console.log('is mobile', isMobile, window.innerWidth);
-    window.innerWidth >= 850 ? setIsMobile(false) : setIsMobile(true);
-  };
+
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div
@@ -22,7 +18,7 @@ const Product = (props: IProducts) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {isMobile ? (
+      {props.isMobile ? (
         <>
           <img
             src={props.img}
