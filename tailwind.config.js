@@ -24,6 +24,9 @@ module.exports = {
       colors: {
         container: '#ffe4e6',
       },
+      dropShadow: {
+        'my-card': ['20px 20px 20px #bebebe', '-20px -20px 20px #ffffff'],
+      },
       fontFamily: { urbanist: ['Urbanist', 'sans-serif'] },
     },
   },
