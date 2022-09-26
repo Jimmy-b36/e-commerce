@@ -12,4 +12,4 @@ Photo by <a href="https://unsplash.com/@mkmasdos?utm_source=unsplash&utm_medium=
 
 Photo by <a href="https://unsplash.com/@donebyalex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Done By Alex</a> on <a href="https://unsplash.com/s/photos/stickers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-Photo by <a href="https://unsplash.com/@stationery_hoe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kasturi Roy</a> on <a href="https://unsplash.com/s/photos/stickers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+<a href="https://www.freepik.com/free-psd/round-sticker-mockup_12006123.htm#query=sticker&position=0&from_view=search">Image by CosmoStudio</a> on Freepik
