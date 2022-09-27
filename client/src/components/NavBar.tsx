@@ -75,7 +75,7 @@ const NavBar = () => {
         </div>
         <img
           className="h-10 w-auto mb-[3px] rounded-md xs:hidden s:hidden"
-          src="https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/logo-white.png?raw=true"
+          src="https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/logo-white.png?raw=true"
           alt="tractor harvesting"
         />
       </div>

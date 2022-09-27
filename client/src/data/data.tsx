@@ -66,7 +66,7 @@ const catagories: ICatagories[] = [
   {
     id: 3,
     name: 'Individual Stickers',
-    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/cannon.jpg?raw=true',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/cannon.jpg?raw=true',
     alt: 'IndividualStickers',
   },
 ];
@@ -74,7 +74,7 @@ const catagories: ICatagories[] = [
 const products: IProducts[] = [
   {
     id: 1,
-    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/kasturi-roy-caRKch3FR9Q-unsplash.jpg?raw=true',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/kasturi-roy-caRKch3FR9Q-unsplash.jpg?raw=true',
     title: 'Sticker Pack',
     description: 'This is a sticker pack',
     price: 10,
@@ -84,7 +84,7 @@ const products: IProducts[] = [
   },
   {
     id: 2,
-    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/done-by-alex-gQMQjJiUGyo-unsplash.jpg?raw=true',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/done-by-alex-gQMQjJiUGyo-unsplash.jpg?raw=true',
     title: 'Van sticker',
     description: 'This is a van sticker',
     price: 10,
@@ -94,7 +94,7 @@ const products: IProducts[] = [
   },
   {
     id: 3,
-    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/mk-2-zzHJ3VSKrZg-unsplash%203.jpg?raw=true',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/mk-2-zzHJ3VSKrZg-unsplash%203.jpg?raw=true',
     title: 'Rocket sticker',
     description: 'This is a rocket sticker',
     price: 10,
@@ -104,7 +104,7 @@ const products: IProducts[] = [
   },
   {
     id: 4,
-    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/mk-2-zzHJ3VSKrZg-unsplash%204.jpg?raw=true',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/mk-2-zzHJ3VSKrZg-unsplash%204.jpg?raw=true',
     title: 'Rad sticker',
     description: 'This is a rad sticker',
     price: 10,
@@ -114,7 +114,7 @@ const products: IProducts[] = [
   },
   {
     id: 5,
-    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/src/assets/images/pineapple-supply-co-CXGf4JgtaXs-unsplash.jpg?raw=true',
+    img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/pineapple-supply-co-CXGf4JgtaXs-unsplash.jpg?raw=true',
     title: 'Pineapple sticker',
     description: 'This is a pineapple sticker',
     price: 10,
