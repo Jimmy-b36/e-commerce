@@ -8,6 +8,7 @@ const userRoute = require('./routes/users');
 const cartRoute = require('./routes/cart');
 const productRoute = require('./routes/product');
 const orderRoute = require('./routes/order');
+const authRoute = require('./routes/auth');
 
 (async () => {
   try {
@@ -23,6 +24,7 @@ app.use('/api/user', userRoute);
 app.use('/api/product', productRoute);
 app.use('/api/order', orderRoute);
 app.use('/api/cart', cartRoute);
+app.use('/api/auth', authRoute());
 
 app.get('/api/test', (req: Request, res: Response) => res.send('Hello World!'));
 
