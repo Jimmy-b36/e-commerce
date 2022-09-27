@@ -13,7 +13,7 @@ const Product = (props: IProductProps) => {
 
   return (
     <div
-      className="p-3 xl:w-1/4 xl:h-1/4 lg:h-1/3 lg:w-1/3 flex flex-col justify-center items-center"
+      className="p-3 2xl:w-1/4 2xl:h-1/4 xl:w-1/3 lg:h-1/3 lg:w-1/3 flex flex-col justify-center items-center"
       key={props.id}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

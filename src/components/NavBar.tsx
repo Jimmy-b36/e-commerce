@@ -5,7 +5,7 @@ const NavBar = () => {
       <div className="navbar-start">
         {/* Responsive */}
         <div className="dropdown ">
-          <label tabIndex={0} className="btn lg:hidden xl:hidden">
+          <label tabIndex={0} className="btn lg:hidden 2xl:hidden">
             <i className="fa-solid fa-magnifying-glass"></i>
           </label>
           <ul
@@ -24,16 +24,16 @@ const NavBar = () => {
         {/* Standard */}
         <label
           htmlFor=""
-          className=" lg:input-group xl:input-group max-w-xs  xs:nav-bar-end text-slate-600 "
+          className=" lg:input-group 2xl:input-group max-w-xs  xs:nav-bar-end text-slate-600 "
         >
-          <span className="lg:flex xl:flex hidden bg-slate-600">
+          <span className="lg:flex 2xl:flex hidden bg-slate-600">
             <i className="fa-solid fa-magnifying-glass "></i>
           </span>
           <form action="" method="get">
             <input
               type="text"
               placeholder="Search for Stickers"
-              className="input w-full max-w-xs md:hidden lg:flex xl:flex hidden xs:nav-bar-end text-slate-600 bg-white"
+              className="input w-full max-w-xs md:hidden lg:flex 2xl:flex hidden xs:nav-bar-end text-slate-600 bg-white"
             />
           </form>
         </label>
@@ -46,13 +46,13 @@ const NavBar = () => {
         <div className="dropdown dropdown-end">
           <label
             tabIndex={0}
-            className="btn m-1 hidden md:flex lg:flex xl:flex text-white bg-slate-600 hover:bg-slate-800"
+            className="btn m-1 hidden md:flex lg:flex 2xl:flex text-white bg-slate-600 hover:bg-slate-800"
           >
             Login/Sign up
           </label>
           <label
             tabIndex={0}
-            className="btn m-1 flex md:hidden lg:hidden xl:hidden text-white px-5 "
+            className="btn m-1 flex md:hidden lg:hidden 2xl:hidden text-white px-5 "
           >
             <i className="fa-solid fa-user"></i>
           </label>

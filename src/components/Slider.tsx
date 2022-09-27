@@ -30,7 +30,7 @@ const Slider = () => {
   }, [handleKeyPress]);
 
   return (
-    <div className="lg:hidden md:hidden sm:hidden xs:hidden">
+    <div className="lg:hidden md:hidden sm:hidden xs:hidden xl:hidden">
       <div className="flex absolute justify-between w-full items-center h-full ">
         <button
           className="btn z-10 ml-10 bg-slate-600 hover:bg-slate-800 text-white"

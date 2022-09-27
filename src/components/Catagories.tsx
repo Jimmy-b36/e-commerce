@@ -18,7 +18,7 @@ const Catagories = () => {
               alt={item.alt}
               className="h-full object-fill w-full brightness-75 hover:rounded-lg"
             />
-            <p className="absolute xl:text-4xl lg:text-2xl md:text-2xl xs:text-2xl sm:text-2xl font-bold text-white blur-0 drop-shadow-[2px_2px_8px_#000000]">
+            <p className="absolute 2xl:text-4xl xl:text-4xl lg:text-2xl md:text-2xl xs:text-2xl sm:text-2xl font-bold text-white blur-0 drop-shadow-[2px_2px_8px_#000000]">
               {item.name}
             </p>
           </a>
