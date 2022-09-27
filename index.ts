@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 3001;
 import { Request, Response } from 'express';
 const userRoute = require('./routes/users');
+const cartRoute = require('./routes/cart');
+const productRoute = require('./routes/product');
+const orderRoute = require('./routes/order');
 
 (async () => {
   try {
@@ -17,6 +20,9 @@ const userRoute = require('./routes/users');
 
 app.use(express.json());
 app.use('/api/user', userRoute);
+app.use('/api/product', productRoute);
+app.use('/api/order', orderRoute);
+app.use('/api/cart', cartRoute);
 
 app.get('/api/test', (req: Request, res: Response) => res.send('Hello World!'));
 
