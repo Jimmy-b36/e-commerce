@@ -13,7 +13,7 @@ const Product = (props: IProductProps) => {
 
   return (
     <div
-      className="p-3 2xl:w-1/4 2xl:h-1/4 xl:w-1/3 lg:h-1/3 lg:w-1/3 flex flex-col justify-center items-center"
+      className="flex flex-col items-center justify-center p-3 2xl:w-1/4 2xl:h-1/4 xl:w-1/3 lg:h-1/3 lg:w-1/3"
       key={props.id}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -23,15 +23,15 @@ const Product = (props: IProductProps) => {
           <img
             src={props.img}
             alt={props.alt}
-            className="w-full h-full brightness-75 scale-105 transition duration-500 ease-in-out rounded-lg cursor-pointer"
+            className="w-full h-full transition duration-500 ease-in-out scale-105 rounded-lg cursor-pointer brightness-75"
           />
           <div className=" absolute justify-center flex flex-col items-center text-lg text-slate-50 font-bold drop-shadow-[2px_2px_8px_#000000]">
             {' '}
             <p className="p-2">{props.title}</p>
             <p className="p-2">{props.description}</p>
             <p className="p-2">${props.price}</p>
-            <button className="btn text-slate-50 m-2">
-              add to cart <i className="fa-solid fa-cart-plus px-2"></i>
+            <button className="m-2 btn text-slate-50">
+              add to cart <i className="px-2 fa-solid fa-cart-plus"></i>
             </button>
           </div>
         </>
@@ -40,15 +40,15 @@ const Product = (props: IProductProps) => {
           <img
             src={props.img}
             alt={props.alt}
-            className="w-full h-full brightness-75 scale-105 transition duration-500 ease-in-out rounded-lg cursor-pointer"
+            className="w-full h-full transition duration-500 ease-in-out scale-105 rounded-lg cursor-pointer brightness-75"
           />
           <div className="absolute justify-center flex flex-col items-center text-2xl text-slate-50 font-bold drop-shadow-[2px_2px_8px_#000000]">
             {' '}
             <p className="p-2">{props.title}</p>
             <p className="p-2">{props.description}</p>
             <p className="p-2">${props.price}</p>
-            <button className="btn text-slate-50 m-2">
-              add to cart <i className="fa-solid fa-cart-plus px-2"></i>
+            <button className="m-2 btn text-slate-50">
+              add to cart <i className="px-2 fa-solid fa-cart-plus"></i>
             </button>
           </div>
         </>

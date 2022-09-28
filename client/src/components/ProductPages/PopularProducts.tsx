@@ -15,10 +15,10 @@ const PopularProducts = () => {
 
   return (
     <div>
-      <p className="flex justify-center xs:text-3xl sm:text-3xl text-heading pt-5">
+      <p className="flex justify-center pt-5 xs:text-3xl sm:text-3xl text-heading">
         Popular Products
       </p>
-      <div className="flex justify-around flex-wrap p-5">
+      <div className="flex flex-wrap justify-around p-5">
         {products.map(
           (item: IProducts, index: number) =>
             item.popular && (

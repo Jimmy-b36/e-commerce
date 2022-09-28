@@ -10,13 +10,13 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-slate-500"
+            className="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 text-slate-500"
           >
             <form action="" method="get">
               <input
                 type="text"
                 placeholder="Search for Stickers"
-                className="input w-full max-w-xs xs:nav-bar-end text-slate-200 bg-white"
+                className="w-full max-w-xs bg-white input xs:nav-bar-end text-slate-200"
               />
             </form>
           </ul>
@@ -24,35 +24,35 @@ const NavBar = () => {
         {/* Standard */}
         <label
           htmlFor=""
-          className=" lg:input-group 2xl:input-group max-w-xs  xs:nav-bar-end text-slate-600 "
+          className="max-w-xs  lg:input-group 2xl:input-group xs:nav-bar-end text-slate-600"
         >
-          <span className="lg:flex 2xl:flex hidden bg-slate-600">
+          <span className="hidden lg:flex 2xl:flex bg-slate-600">
             <i className="fa-solid fa-magnifying-glass "></i>
           </span>
           <form action="" method="get">
             <input
               type="text"
               placeholder="Search for Stickers"
-              className="input w-full max-w-xs md:hidden lg:flex 2xl:flex hidden xs:nav-bar-end text-slate-600 bg-white"
+              className="hidden w-full max-w-xs bg-white input md:hidden lg:flex 2xl:flex xs:nav-bar-end text-slate-600"
             />
           </form>
         </label>
       </div>
 
-      <div className="navbar-center flex xs:justify-start xs:-ml-12 ml-0 text-slate-200">
-        <a className="btn btn-ghost text-bold text-3xl text-white">Stickers.</a>
+      <div className="flex ml-0 navbar-center xs:justify-start xs:-ml-12 text-slate-200">
+        <a className="text-3xl text-white btn btn-ghost text-bold">Stickers.</a>
       </div>
       <div className="navbar-end">
         <div className="dropdown dropdown-end">
           <label
             tabIndex={0}
-            className="btn m-1 hidden md:flex lg:flex 2xl:flex text-white bg-slate-600 hover:bg-slate-800"
+            className="hidden m-1 text-white btn md:flex lg:flex 2xl:flex bg-slate-600 hover:bg-slate-800"
           >
             Login/Sign up
           </label>
           <label
             tabIndex={0}
-            className="btn m-1 flex md:hidden lg:hidden 2xl:hidden text-white px-5 "
+            className="flex px-5 m-1 text-white btn md:hidden lg:hidden 2xl:hidden "
           >
             <i className="fa-solid fa-user"></i>
           </label>
@@ -66,10 +66,10 @@ const NavBar = () => {
           </div>
         </div>
         <div className="indicator">
-          <span className="indicator-item badge badge-secondary mr-3 xs:mr-1">
+          <span className="mr-3 indicator-item badge badge-secondary xs:mr-1">
             3
           </span>
-          <button className="btn text-white mr-2 xs:mr-0 px-5 bg-slate-600 hover:bg-slate-800">
+          <button className="px-5 mr-2 text-white btn xs:mr-0 bg-slate-600 hover:bg-slate-800">
             <i className="fa-solid fa-cart-shopping"></i>
           </button>
         </div>
