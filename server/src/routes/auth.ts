@@ -1,23 +1,10 @@
 require('dotenv').config();
+import { IUser } from '../types';
 const router = require('express').Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 import { IRouter, Request, Response } from 'express';
-
-interface IUser {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  _doc: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
-  };
-}
 
 // REGISTER routes
 const authRouter = (): IRouter => {
@@ -26,7 +13,7 @@ const authRouter = (): IRouter => {
   });
 
   router.put('/register', async (req: Request, res: Response) => {
-    const newUser = await new User({
+    const newUser: IUser = await new User({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
@@ -34,8 +21,21 @@ const authRouter = (): IRouter => {
     });
     try {
       const user: IUser = await newUser.save();
-      res.status(200).send(user);
+      // create access token
+      const accessToken = jwt.sign(
+        {
+          userId: user._id,
+          isAdmin: user.isAdmin,
+        },
+        process.env.JWT_SECRET,
+        { expiresIn: '3d' }
+      );
+
+      // return access token & login information
+      const { password, ...userObj } = user._doc;
+      return res.status(200).send({ ...userObj, accessToken });
     } catch (err) {
+      console.log('email already exists');
       return res.status(500).send(err);
     }
   });
@@ -48,13 +48,16 @@ const authRouter = (): IRouter => {
       if (!user) return res.status(401).send('User not found');
 
       if (bcrypt.compareSync(req.body.password, user.password)) {
-        console.log(user.id);
-
-        const accessToken = jwt.sign({
-          userId: user.id,
-        });
+        const accessToken = jwt.sign(
+          {
+            userId: user._id,
+            isAdmin: user.isAdmin,
+          },
+          process.env.JWT_SECRET,
+          { expiresIn: '3d' }
+        );
         const { password, ...others } = user._doc;
-        return res.status(200).send(others);
+        return res.status(200).send({ ...others, accessToken });
       }
       return res.status(500).send('password incorrect');
     } catch (err) {
