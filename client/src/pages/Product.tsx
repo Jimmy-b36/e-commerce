@@ -26,42 +26,42 @@ const Product = () => {
           (item: IProducts, index: number) =>
             item.title === 'Van sticker' && (
               <div
-                className="flex justify-center items-center flex-col w-full"
+                className="flex flex-col items-center justify-center w-full"
                 key={index}
               >
                 <div className="w-3/4 lg:w-full">
-                  <p className="text-heading xs:text-5xl sm:text-5xl flex pt-8 justify-center">
+                  <p className="flex justify-center pt-8 text-heading xs:text-5xl sm:text-5xl">
                     {item.title}
                   </p>
-                  <div className="flex flex-row xs:flex-col sm:flex-col items-center justify-around p-10">
+                  <div className="flex flex-row items-center justify-around p-10 xs:flex-col sm:flex-col">
                     <img
                       src={item.img}
                       alt={item.alt}
-                      className="h-auto w-2/3 xs:w-full sm:w-full md:w-full lg:w-full rounded-lg"
+                      className="w-2/3 h-auto rounded-lg xs:w-full sm:w-full md:w-full lg:w-full"
                     />
-                    <div className="flex flex-col justify-center items-center">
-                      <p className="w-3/4 xs:w-full sm:w-full p-5 pb-10">
+                    <div className="flex flex-col items-center justify-center">
+                      <p className="w-3/4 p-5 pb-10 xs:w-full sm:w-full">
                         {item.description} Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Ad, voluptas? Et eaque aut
                         quo? Aut facere rerum aliquam repellat nisi iure,
                         impedit expedita ex quaerat fugiat eum illo! Aut, nisi?
                       </p>
-                      <p className="text-bold text-xl pb-5">${item.price}</p>
-                      <div className="flex xs:flex-col sm:flex-col justify-center items-center">
-                        <div className="flex flex-row w-full justify-center items-center xs:pb-2 sm:pb-2">
+                      <p className="pb-5 text-xl text-bold">${item.price}</p>
+                      <div className="flex items-center justify-center xs:flex-col sm:flex-col">
+                        <div className="flex flex-row items-center justify-center w-full xs:pb-2 sm:pb-2">
                           <button onClick={() => quantityHandler('down')}>
-                            <i className="fa-solid fa-minus pr-2"></i>
+                            <i className="pr-2 fa-solid fa-minus"></i>
                           </button>
-                          <p className="flex items-center px-5 mx-4 border-black border rounded-lg">
+                          <p className="flex items-center px-5 mx-4 border border-black rounded-lg">
                             {quantity}
                           </p>
                           <button onClick={() => quantityHandler('up')}>
-                            <i className="fa-solid fa-plus pl-2 pr-10 xs:pr-0 sm:pr-0 "></i>
+                            <i className="pl-2 pr-10 fa-solid fa-plus xs:pr-0 sm:pr-0 "></i>
                           </button>
                         </div>
                         <button className="btn text-slate-50">
                           add to cart{' '}
-                          <i className="fa-solid fa-cart-plus px-2"></i>
+                          <i className="px-2 fa-solid fa-cart-plus"></i>
                         </button>
                       </div>
                     </div>

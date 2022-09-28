@@ -10,14 +10,14 @@ const Registration = () => {
     <div>
       <Announcement />
       <NavBar />
-      <div className="flex justify-center items-center flex-col w-full">
-        <div className="w-3/4 xs:w-9/10 lg:w-full flex flex-col items-center mt-5">
-          <p className="text-heading flex justify-center xs:text-5xl">
+      <div className="flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center w-3/4 mt-5 xs:w-9/10 lg:w-full">
+          <p className="flex justify-center text-heading xs:text-5xl">
             Registration
           </p>
-          <div className="card w-1/2 xs:w-full justify-center items-center bg-base-100 drop-shadow-my-card p-2 m-10">
-            <div className="card-body w-3/4 xs:w-full">
-              <div className="card-header flex justify-center text-2xl">
+          <div className="items-center justify-center w-1/2 p-2 m-10 card xs:w-full bg-base-100 drop-shadow-my-card">
+            <div className="w-3/4 card-body xs:w-full">
+              <div className="flex justify-center text-2xl card-header">
                 Create an account
               </div>
               <form onSubmit={handleFormSubmit}>
@@ -25,37 +25,37 @@ const Registration = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="input input-bordered w-full"
+                  className="w-full input input-bordered"
                 />
                 <label className="label"></label>
                 <input
                   type="text"
                   placeholder="First name"
-                  className="input input-bordered w-full"
+                  className="w-full input input-bordered"
                 />
                 <label className="label"></label>
                 <input
                   type="text"
                   placeholder="Last name"
-                  className="input input-bordered w-full"
+                  className="w-full input input-bordered"
                 />
                 <label className="label"></label>
                 <input
                   type="text"
                   placeholder="Password"
-                  className="input input-bordered w-full"
+                  className="w-full input input-bordered"
                 />
                 <label className="label"></label>
                 <input
                   type="text"
                   placeholder="Password confirmation"
-                  className="input input-bordered w-full"
+                  className="w-full input input-bordered"
                 />
-                <div className="flex justify-center items-center">
+                <div className="flex items-center justify-center">
                   <input
                     type="submit"
                     value="Submit"
-                    className="btn m-5 text-white "
+                    className="m-5 text-white btn "
                   />
                 </div>
               </form>
