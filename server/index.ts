@@ -20,10 +20,10 @@ const authRoute = require('./routes/auth');
 })();
 
 app.use(express.json());
-app.use('/api/user', userRoute);
-app.use('/api/product', productRoute);
-app.use('/api/order', orderRoute);
-app.use('/api/cart', cartRoute);
+app.use('/api/user', userRoute());
+app.use('/api/product', productRoute());
+app.use('/api/order', orderRoute());
+app.use('/api/cart', cartRoute());
 app.use('/api/auth', authRoute());
 
 app.get('/api/test', (req: Request, res: Response) => res.send('Hello World!'));
