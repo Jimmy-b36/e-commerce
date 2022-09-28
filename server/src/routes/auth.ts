@@ -2,9 +2,11 @@ require('dotenv').config();
 const router = require('express').Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 import { IRouter, Request, Response } from 'express';
 
 interface IUser {
+  id: number;
   firstName: string;
   lastName: string;
   email: string;
@@ -46,6 +48,11 @@ const authRouter = (): IRouter => {
       if (!user) return res.status(401).send('User not found');
 
       if (bcrypt.compareSync(req.body.password, user.password)) {
+        console.log(user.id);
+
+        const accessToken = jwt.sign({
+          userId: user.id,
+        });
         const { password, ...others } = user._doc;
         return res.status(200).send(others);
       }
