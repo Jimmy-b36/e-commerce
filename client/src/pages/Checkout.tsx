@@ -28,7 +28,7 @@ const Checkout = () => {
             <div className="flex flex-col items-center w-full p-4 border-b border-black 2xl:flex-row xl:flex-row lg:flex-row">
               <div className="w-full 2xl:w-1/4 lg:w-1/2">
                 <img
-                  src="https://github.com/jimmy-btv/e-commerce/blob/main/src/assets/images/Round_Sticker_Mockup_003.jpg?raw=true"
+                  src="https://github.com/jimmy-btv/e-commerce/blob/main/client/src/assets/images/Round_Sticker_Mockup_003.jpg?raw=true"
                   alt="Sticker mockup"
                 />
               </div>
@@ -72,7 +72,7 @@ const Checkout = () => {
             <div className="flex flex-col items-center w-full p-4 border-b border-black 2xl:flex-row xl:flex-row lg:flex-row">
               <div className="w-full 2xl:w-1/4 lg:w-1/2">
                 <img
-                  src="https://github.com/jimmy-btv/e-commerce/blob/main/src/assets/images/Round_Sticker_Mockup_003.jpg?raw=true"
+                  src="https://github.com/jimmy-btv/e-commerce/blob/main/client/src/assets/images/Round_Sticker_Mockup_003.jpg?raw=true"
                   alt="Sticker mockup"
                 />
               </div>
@@ -114,7 +114,7 @@ const Checkout = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center w-1/2 text-center  xs:w-full">
+          <div className="flex flex-col items-center justify-center w-1/2 text-center xs:w-full">
             <p className="flex justify-center p-5 text-3xl font-bold">
               Order Summary
             </p>
