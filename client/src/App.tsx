@@ -5,7 +5,7 @@ import Registration from './pages/Registration';
 import Checkout from './pages/Checkout';
 
 function App() {
-  return <Home />;
+  return <Checkout />;
 }
 
 export default App;

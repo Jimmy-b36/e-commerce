@@ -12,27 +12,27 @@ const Checkout = () => {
     <div>
       <Announcement />
       <NavBar />
-      <div className="flex justify-center m-10 flex-col items-center">
+      <div className="flex flex-col items-center justify-center m-10">
         <p className="text-heading">Your bag</p>
-        <div className="flex 2xl:justify-around justify-center items-center w-1/2 xs:w-full mt-5 xs:flex-col lg:flex-col lg:w-1/2">
-          <a href="" className="text-xl underline m-2  ">
+        <div className="flex items-center justify-center w-1/2 mt-5 2xl:justify-around xs:w-full xs:flex-col lg:flex-col lg:w-1/2">
+          <a href="" className="m-2 text-xl underline ">
             Shopping bag (2)
           </a>
-          <a href="" className="text-xl underline m-2">
+          <a href="" className="m-2 text-xl underline">
             Your wishlist (0)
           </a>
         </div>
 
-        <div className="flex 2xl:flex-row  flex-col items-center lg:w-full w-3/4  justify-between mt-5">
+        <div className="flex flex-col items-center justify-between w-3/4 mt-5 2xl:flex-row lg:w-full">
           <div className="flex flex-col">
-            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row flex-col items-center border-b border-black  w-full p-4">
-              <div className="2xl:w-1/4 w-full lg:w-1/2">
+            <div className="flex flex-col items-center w-full p-4 border-b border-black 2xl:flex-row xl:flex-row lg:flex-row">
+              <div className="w-full 2xl:w-1/4 lg:w-1/2">
                 <img
-                  src="https://github.com/jimmy-btv/e-commerce/blob/main/src/assets/images/Round_Sticker_Mockup_003.jpg?raw=true"
+                  src="https://github.com/jimmy-btv/e-commerce/blob/main/client/src/assets/images/Round_Sticker_Mockup_003.jpg?raw=true"
                   alt="Sticker mockup"
                 />
               </div>
-              <div className="2xl:w-1/2 w-full flex  flex-col items-center justify-center 2xl:border-r 2xl:border-b-0 xl:border-b-0 lg:border-b-0 2xl:border-black border-b border-black">
+              <div className="flex flex-col items-center justify-center w-full border-b border-black 2xl:w-1/2 2xl:border-r 2xl:border-b-0 xl:border-b-0 lg:border-b-0 2xl:border-black">
                 <p className="p-2">
                   <strong className="text-xl">Product:</strong> Mockup round
                   sticker
@@ -51,13 +51,13 @@ const Checkout = () => {
                 <div className="flex flex-row py-2">
                   <strong className="text-xl">Quantity:</strong>{' '}
                   <button>
-                    <i className="fa-solid fa-minus px-2"></i>
+                    <i className="px-2 fa-solid fa-minus"></i>
                   </button>
-                  <p className="flex items-center px-5 mx-2 border-black border rounded-lg">
+                  <p className="flex items-center px-5 mx-2 border border-black rounded-lg">
                     2
                   </p>
                   <button>
-                    <i className="fa-solid fa-plus px-2"></i>
+                    <i className="px-2 fa-solid fa-plus"></i>
                   </button>
                 </div>
                 <p className="py-2">
@@ -69,14 +69,14 @@ const Checkout = () => {
               </div>
             </div>
 
-            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row flex-col items-center border-b border-black  w-full p-4">
-              <div className="2xl:w-1/4 w-full lg:w-1/2">
+            <div className="flex flex-col items-center w-full p-4 border-b border-black 2xl:flex-row xl:flex-row lg:flex-row">
+              <div className="w-full 2xl:w-1/4 lg:w-1/2">
                 <img
-                  src="https://github.com/jimmy-btv/e-commerce/blob/main/src/assets/images/Round_Sticker_Mockup_003.jpg?raw=true"
+                  src="https://github.com/jimmy-btv/e-commerce/blob/main/client/src/assets/images/Round_Sticker_Mockup_003.jpg?raw=true"
                   alt="Sticker mockup"
                 />
               </div>
-              <div className="2xl:w-1/2 w-full flex  flex-col items-center justify-center 2xl:border-r 2xl:border-b-0 xl:border-b-0 lg:border-b-0 2xl:border-black border-b border-black">
+              <div className="flex flex-col items-center justify-center w-full border-b border-black 2xl:w-1/2 2xl:border-r 2xl:border-b-0 xl:border-b-0 lg:border-b-0 2xl:border-black">
                 <p className="p-2">
                   <strong className="text-xl">Product:</strong> Mockup round
                   sticker
@@ -95,13 +95,13 @@ const Checkout = () => {
                 <div className="flex flex-row py-2">
                   <strong className="text-xl">Quantity:</strong>{' '}
                   <button>
-                    <i className="fa-solid fa-minus px-2"></i>
+                    <i className="px-2 fa-solid fa-minus"></i>
                   </button>
-                  <p className="flex items-center px-5 mx-2 border-black border rounded-lg">
+                  <p className="flex items-center px-5 mx-2 border border-black rounded-lg">
                     2
                   </p>
                   <button>
-                    <i className="fa-solid fa-plus px-2"></i>
+                    <i className="px-2 fa-solid fa-plus"></i>
                   </button>
                 </div>
                 <p className="py-2">
@@ -114,8 +114,8 @@ const Checkout = () => {
             </div>
           </div>
 
-          <div className=" flex flex-col items-center justify-center text-center xs:w-full w-1/2">
-            <p className="text-3xl font-bold p-5 flex justify-center">
+          <div className="flex flex-col items-center justify-center w-1/2 text-center xs:w-full">
+            <p className="flex justify-center p-5 text-3xl font-bold">
               Order Summary
             </p>
             <p className="my-2">
@@ -135,11 +135,11 @@ const Checkout = () => {
             </p>
           </div>
         </div>
-        <div className="flex justify-around w-1/2 xs:w-full mt-5 xs:flex-col lg:flex-col lg:w-1/2">
-          <button className="btn text-white mb-5 2xl:mb-0 xl:mb-0">
+        <div className="flex justify-around w-1/2 mt-5 xs:w-full xs:flex-col lg:flex-col lg:w-1/2">
+          <button className="mb-5 text-white btn 2xl:mb-0 xl:mb-0">
             Continue shopping
           </button>
-          <button className="btn text-white mt-5 2xl:mt-0 xl:mt-0 bg-green-500 hover:bg-green-700 hover:border-transparent border-transparent">
+          <button className="mt-5 text-white bg-green-500 border-transparent btn 2xl:mt-0 xl:mt-0 hover:bg-green-700 hover:border-transparent">
             Checkout now
           </button>
         </div>

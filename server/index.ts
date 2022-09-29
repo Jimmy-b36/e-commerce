@@ -4,11 +4,11 @@ const app = express();
 const mongoose = require('mongoose');
 const port = process.env.PORT || 3001;
 import { Request, Response } from 'express';
-const userRoute = require('./routes/users');
-const cartRoute = require('./routes/cart');
-const productRoute = require('./routes/product');
-const orderRoute = require('./routes/order');
-const authRoute = require('./routes/auth');
+const userRoute = require('./src/routes/users');
+const cartRoute = require('./src/routes/cart');
+const productRoute = require('./src/routes/product');
+const orderRoute = require('./src/routes/order');
+const authRoute = require('./src/routes/auth');
 
 (async () => {
   try {

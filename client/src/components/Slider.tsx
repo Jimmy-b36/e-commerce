@@ -31,21 +31,21 @@ const Slider = () => {
 
   return (
     <div className="lg:hidden md:hidden sm:hidden xs:hidden xl:hidden">
-      <div className="flex absolute justify-between w-full items-center h-full ">
+      <div className="absolute flex items-center justify-between w-full h-full ">
         <button
-          className="btn z-10 ml-10 bg-slate-600 hover:bg-slate-800 text-white"
+          className="z-10 ml-10 text-white btn bg-slate-600 hover:bg-slate-800"
           onClick={() => handleClick('prev')}
         >
-          <i className="fa-solid fa-arrow-left text-2xl"></i>
+          <i className="text-2xl fa-solid fa-arrow-left"></i>
         </button>
         <button
-          className="btn z-10 mr-10 bg-slate-600 hover:bg-slate-800 text-white"
+          className="z-10 mr-10 text-white btn bg-slate-600 hover:bg-slate-800"
           onClick={() => handleClick('next')}
         >
-          <i className="fa-solid fa-arrow-right text-2xl"></i>
+          <i className="text-2xl fa-solid fa-arrow-right"></i>
         </button>
       </div>
-      <div className="flex flex-nowrap overflow-hidden ">
+      <div className="flex overflow-hidden flex-nowrap ">
         {carousel.map((item: ICarouselData, index: number) => (
           <div
             // for some reason I have to initiate the translate-x to 100%/200% to get the slider working
@@ -62,7 +62,7 @@ const Slider = () => {
             <img
               src={item.img}
               alt={item.alt}
-              className="h-2/3 1/3 w-auto rounded-3xl mb-2 mask overflow-hidden shrink-0 mr-4 object-cover"
+              className="object-cover w-auto mb-2 mr-4 overflow-hidden h-2/3 1/3 rounded-3xl mask shrink-0"
             />
             <div className="flex flex-col justify-center -mt-[100px] h-full items-center">
               <p className="text-[90px]">
@@ -71,7 +71,7 @@ const Slider = () => {
               <div className="my-10 text-[20px] whitespace-normal w-2/3">
                 {item.description}
               </div>
-              <button className="btn z-20 w-1/2 text-white bg-slate-600 hover:bg-slate-800">
+              <button className="z-20 w-1/2 text-white btn bg-slate-600 hover:bg-slate-800">
                 Shop now
               </button>
             </div>

@@ -6,11 +6,11 @@ const ContactForm = () => {
     <>
       <p className="text-[90px] flex justify-center  pt-8">Contact us</p>
       <div className="flex justify-center ">
-        <div className="card card-compact w-2/3 p-14 shadow bg-primary text-primary-content m-10 flex items-center justify-center">
+        <div className="flex items-center justify-center w-2/3 m-10 shadow card card-compact p-14 bg-primary text-primary-content">
           <form action="/" className="w-full">
-            <div className="w-full flex flex-row">
-              <div className="flex flex-col justify-center items-center w-1/2">
-                <div className="flex flex-col my-2 justify-center items-center w-full">
+            <div className="flex flex-row w-full">
+              <div className="flex flex-col items-center justify-center w-1/2">
+                <div className="flex flex-col items-center justify-center w-full my-2">
                   <label htmlFor="name" className="flex justify-center mb-2">
                     Full Name:
                   </label>
@@ -18,10 +18,10 @@ const ContactForm = () => {
                     type="text"
                     name="name"
                     placeholder="Type here"
-                    className="input w-full max-w-xs bg-white"
+                    className="w-full max-w-xs bg-white input"
                   />
                 </div>
-                <div className="flex flex-col my-2 justify-center items-center w-full">
+                <div className="flex flex-col items-center justify-center w-full my-2">
                   <label htmlFor="email" className="flex justify-center mb-2">
                     Email:
                   </label>
@@ -30,33 +30,33 @@ const ContactForm = () => {
                     type="text"
                     name="email"
                     placeholder="Type here"
-                    className="input w-full max-w-xs bg-white"
+                    className="w-full max-w-xs bg-white input"
                   />
                 </div>
-                <div className="flex flex-col my-2 justify-center items-center w-full">
+                <div className="flex flex-col items-center justify-center w-full my-2">
                   <label htmlFor="message" className="flex justify-center mb-2">
                     Message:
                   </label>
                   <textarea
-                    className="textarea bg-white w-3/4"
+                    className="w-3/4 bg-white textarea"
                     name="message"
                     placeholder="Message"
                   ></textarea>
                 </div>
               </div>
-              <div className="flex justify-center items-center px-5">
+              <div className="flex items-center justify-center px-5">
                 {image ? (
                   <div className="flex flex-col items-center justify-center">
                     <img
                       alt="not found"
                       width={'250px'}
                       src={URL.createObjectURL(image)}
-                      className="w-96 rounded-lg"
+                      className="rounded-lg w-96"
                     />
                     <br />
                     <button
                       onClick={() => setImage(null)}
-                      className="btn bg-slate-500 hover:bg-slate-800 text-white mt-4"
+                      className="mt-4 text-white btn bg-slate-500 hover:bg-slate-800"
                     >
                       Remove
                     </button>
@@ -64,7 +64,7 @@ const ContactForm = () => {
                 ) : (
                   <input
                     type="file"
-                    className="btn 0 hover:bg-slate-800 text-white"
+                    className="text-white btn 0 hover:bg-slate-800"
                     onChange={(e: React.ChangeEvent) => {
                       const target = e.target as HTMLInputElement;
                       target.files && setImage(target.files[0]);
@@ -73,11 +73,11 @@ const ContactForm = () => {
                 )}
               </div>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
               <input
                 type="submit"
                 value="Submit"
-                className="btn bg-slate-500 hover:bg-slate-800 text-white mt-5 w-1/3"
+                className="w-1/3 mt-5 text-white btn bg-slate-500 hover:bg-slate-800"
               />
             </div>
           </form>

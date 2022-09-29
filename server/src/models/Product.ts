@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 const productSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, unique: true },
@@ -8,7 +10,7 @@ const productSchema = new mongoose.Schema(
     category: { type: Array, required: true },
     popular: { type: Boolean, default: false },
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model('Product', productSchema);
