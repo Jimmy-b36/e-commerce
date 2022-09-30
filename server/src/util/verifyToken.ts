@@ -32,7 +32,7 @@ const verifyTokenAndAuthorization = (
     //check to see if the request user id matches the current user or if the user is an Admin
     return req.user?.userId === req.params.id || req.user?.isAdmin
       ? next()
-      : res.status(401).send('unable to delete token is invalid');
+      : res.status(401).send('unable to make request');
   });
 };
 
