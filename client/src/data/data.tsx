@@ -1,29 +1,4 @@
-export interface ICarouselData {
-  id: number;
-  img: string;
-  title: string;
-  description: string;
-  season?: string;
-  alt: string;
-}
-
-export interface ICatagories {
-  id: number;
-  name: string;
-  img: string;
-  alt: string;
-}
-
-export interface IProducts {
-  id: number;
-  img: string;
-  title: string;
-  description: string;
-  price: number;
-  alt: string;
-  category: string;
-  popular: boolean;
-}
+import { ICarouselData, IProducts, ICategories } from '../types';
 
 const carousel: ICarouselData[] = [
   {
@@ -50,7 +25,7 @@ const carousel: ICarouselData[] = [
   },
 ];
 
-const catagories: ICatagories[] = [
+const catagories: ICategories[] = [
   {
     id: 1,
     name: 'Sticker packs',
