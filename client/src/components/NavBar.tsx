@@ -24,7 +24,7 @@ const NavBar = () => {
         {/* Standard */}
         <label
           htmlFor=""
-          className="max-w-xs  lg:input-group 2xl:input-group xs:nav-bar-end text-slate-600"
+          className="max-w-xs lg:input-group 2xl:input-group xs:nav-bar-end text-slate-600"
         >
           <span className="hidden lg:flex 2xl:flex bg-slate-600">
             <i className="fa-solid fa-magnifying-glass "></i>
@@ -40,7 +40,9 @@ const NavBar = () => {
       </div>
 
       <div className="flex ml-0 navbar-center xs:justify-start xs:-ml-12 text-slate-200">
-        <a className="text-3xl text-white btn btn-ghost text-bold">Stickers.</a>
+        <a href="/" className="text-3xl text-white btn btn-ghost text-bold">
+          Stickers.
+        </a>
       </div>
       <div className="navbar-end">
         <div className="dropdown dropdown-end">
