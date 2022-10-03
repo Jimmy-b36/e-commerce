@@ -25,6 +25,22 @@ export interface IProduct {
   category: [];
   popular: boolean;
 }
+
+export interface ICart {
+  save: any;
+  userId: string;
+  products: [{ productId: string; quantity: number }];
+}
+
+export interface IOrder {
+  save: any;
+  userId: string;
+  products: [{ productId: string; quantity: number }];
+  amount: number;
+  address: string;
+  status: string;
+}
+
 // to make the file a module and avoid the TypeScript error
 export {};
 
