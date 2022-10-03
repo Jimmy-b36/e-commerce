@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Product = require('../models/Product');
-const { verifyTokenAdmin } = require('./verifyToken');
+const { verifyTokenAdmin } = require('../util/verifyToken');
 import { IProduct } from '../types';
 import { IRouter, Request, Response } from 'express';
 
@@ -18,8 +18,8 @@ const productRouter = (): IRouter => {
     try {
       const product: IProduct = await newProduct.save();
       return res.status(200).json(product);
-    } catch (err) {
-      return res.status(500).send(err);
+    } catch (err: any) {
+      return res.status(500).send(`could not save product: ${err.message}`);
     }
   });
 
@@ -38,8 +38,8 @@ const productRouter = (): IRouter => {
           { new: true }
         );
         return res.status(200).send(updatedProduct);
-      } catch (err) {
-        return res.status(500).send(err);
+      } catch (err: any) {
+        return res.status(500).send(`could not update product ${err.message}`);
       }
     }
   );
@@ -63,8 +63,8 @@ const productRouter = (): IRouter => {
       !qNew && !qCategory ? (products = await Product.find()) : null;
 
       return res.status(200).send(products);
-    } catch (err) {
-      return res.status(500).send(err);
+    } catch (err: any) {
+      return res.status(500).send(`could not find product: ${err.message}`);
     }
   });
 
@@ -75,8 +75,8 @@ const productRouter = (): IRouter => {
       product = product._doc;
       const { password, isAdmin, ...others } = product;
       res.status(200).send(others);
-    } catch (err) {
-      return res.status(500).send('Product not found');
+    } catch (err: any) {
+      return res.status(500).send(`Product not found ${err.message}`);
     }
   });
 
@@ -101,7 +101,11 @@ const productRouter = (): IRouter => {
           },
         ]);
         return res.status(200).send(data);
-      } catch (err) {}
+      } catch (err: any) {
+        return res
+          .status(500)
+          .send(`could not aggregate product stats: ${err.message}`);
+      }
     }
   );
 
@@ -114,8 +118,8 @@ const productRouter = (): IRouter => {
       try {
         await Product.findByIdAndDelete(req.params.id);
         return res.status(200).send('Product has been Successfully deleted');
-      } catch (err) {
-        return res.status(500).send(err);
+      } catch (err: any) {
+        return res.status(500).send(`could not delete product ${err.message}`);
       }
     }
   );
