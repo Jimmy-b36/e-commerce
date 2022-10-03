@@ -6,6 +6,7 @@ import Product from './pages/Product';
 import Registration from './pages/Registration';
 import Checkout from './pages/Checkout';
 import Pay from './components/Pay';
+import Success from './pages/Success';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/products/:category" element={<ProductList />} />
         <Route path="/product/:id" element={<Product />} />
         <Route
-          path="pay"
+          path="/pay"
           element={
             <Pay
               children={null}
@@ -28,8 +29,7 @@ function App() {
         />
         <Route path="/cart" />
         {/* <Cart /> */}
-        <Route path="/success" />
-        {/* <Success /> */}
+        <Route path="/success" element={<Success />} />
       </Routes>
     </Router>
   );
