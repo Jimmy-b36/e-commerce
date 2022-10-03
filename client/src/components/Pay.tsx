@@ -27,15 +27,15 @@ const Pay = ({ children, cart }: IPay) => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = axios.post('/api/checkout/payment', {
+        const res = await axios.post('http://localhost:3001/api/payment', {
           tokenId: stripeToken!.id,
           amount: cart.subTotal * 1.12 * 100,
         });
         console.log(res.data);
-
-        navigate('/success');
+        return navigate('/success');
       } catch (err: any) {
-        console.log(err.message);
+        console.log(`there was an error with the request ${err.message}`);
+        return;
       }
     };
     stripeToken! && makeRequest();
