@@ -2,10 +2,12 @@ import Product from './Product';
 import { products } from '../../data/data';
 import { IProducts } from '../../data/data';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
 const Products = () => {
+  const { category }: any = useParams();
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [productCategory, setProductCategory] =
-    useState<string>('All products');
+  const [productCategory, setProductCategory] = useState<string>(category);
 
   const handleResize = () => {
     window.innerWidth >= 850 ? setIsMobile(false) : setIsMobile(true);
