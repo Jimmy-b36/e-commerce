@@ -53,7 +53,7 @@ const carousel: ICarouselData[] = [
 const catagories: ICatagories[] = [
   {
     id: 1,
-    name: 'Sticker Packs',
+    name: 'Sticker packs',
     img: 'https://img.freepik.com/free-vector/naive-halloween-stickers-collection_52683-68866.jpg?w=1380&t=st=1663005053~exp=1663005653~hmac=0e3afd22fad557ade1965d131abc485ffd61e12f184846ec5b50c64babf07de6',
     alt: 'Sticker packs',
   },
@@ -65,7 +65,7 @@ const catagories: ICatagories[] = [
   },
   {
     id: 3,
-    name: 'Individual Stickers',
+    name: 'Single stickers',
     img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/cannon.jpg?raw=true',
     alt: 'IndividualStickers',
   },
