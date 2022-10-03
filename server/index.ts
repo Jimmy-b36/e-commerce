@@ -9,6 +9,7 @@ const cartRoute = require('./src/routes/cart');
 const productRoute = require('./src/routes/product');
 const orderRoute = require('./src/routes/order');
 const authRoute = require('./src/routes/auth');
+const checkoutRoute = require('./src/routes/stripe');
 
 (async () => {
   try {
@@ -25,6 +26,7 @@ app.use('/api/product', productRoute());
 app.use('/api/order', orderRoute());
 app.use('/api/cart', cartRoute());
 app.use('/api/auth', authRoute());
+app.use('/api/checkout', checkoutRoute());
 
 app.get('/api/test', (req: Request, res: Response) => res.send('Hello World!'));
 

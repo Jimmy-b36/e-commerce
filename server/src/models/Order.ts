@@ -1,6 +1,8 @@
+import mongoose from 'mongoose';
+
 const orderSchema = new mongoose.Schema(
   {
-    userId: { type: String, required: true, unique: true },
+    userId: { type: String, required: true },
     products: [
       {
         productId: { type: String },
@@ -11,7 +13,7 @@ const orderSchema = new mongoose.Schema(
     address: { type: Object, required: true },
     status: { type: String, required: true, default: 'pending' },
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
-module.exports = mongoose.new('Order', orderSchema);
+module.exports = mongoose.model('Order', orderSchema);

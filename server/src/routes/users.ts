@@ -5,7 +5,7 @@ const User = require('../models/User');
 const {
   verifyTokenAndAuthorization,
   verifyTokenAdmin,
-} = require('./verifyToken');
+} = require('../util/verifyToken');
 import { IRouter, Request, Response } from 'express';
 
 //UPDATE USER
@@ -89,7 +89,9 @@ const userRouter = (): IRouter => {
           },
         ]);
         return res.status(200).send(data);
-      } catch (err) {}
+      } catch (err: any) {
+        return res.status(500).send(`could not get stats: ${err.message}`);
+      }
     }
   );
 

@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 const cartSchema = new mongoose.Schema(
   {
     userId: { type: String, required: true, unique: true },
@@ -8,7 +10,7 @@ const cartSchema = new mongoose.Schema(
       },
     ],
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
-module.exports = mongoose.new('Cart', cartSchema);
+module.exports = mongoose.model('Cart', cartSchema);
