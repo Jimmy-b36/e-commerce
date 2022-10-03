@@ -1,6 +1,6 @@
 import Product from './Product';
 import { products } from '../../data/data';
-import { IProducts } from '../../data/data';
+import { IProducts } from '../../types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
