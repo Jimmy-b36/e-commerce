@@ -1,7 +1,8 @@
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Announcement from '../components/Announcement';
-import { IProducts, products } from '../data/data';
+import { products } from '../data/data';
+import { IProducts } from '../types';
 import Newsletter from '../components/Newsletter';
 
 import { useState } from 'react';
