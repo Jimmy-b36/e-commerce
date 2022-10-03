@@ -9,7 +9,7 @@ const Catagories = () => {
       <div className="flex flex-row items-center justify-between p-5 sm:flex-col xs:flex-col ">
         {catagories.map((item: ICatagories, index: number) => (
           <a
-            href="/"
+            href={`/products/${item.name}`}
             className="flex items-center justify-center w-1/3 h-auto duration-100 ease-in-out transform cursor-pointer hover:scale-105 hover:z-20 xs:w-full sm:w-full"
             key={index}
           >
