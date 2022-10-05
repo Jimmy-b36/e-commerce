@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { IProducts } from '../../types';
 
 interface IProductProps extends IProducts {
@@ -36,15 +37,17 @@ const Product = (props: IProductProps) => {
           </div>
         </a>
       ) : isHovered ? (
-        <a
-          href={`/product/${props.id}`}
-          className="flex items-center justify-center"
-        >
-          <img
-            src={props.img}
-            alt={props.alt}
-            className="w-full h-full transition duration-500 ease-in-out scale-105 rounded-lg cursor-pointer brightness-75"
-          />
+        <>
+          <Link
+            to={`/product/${props.id}`}
+            className={'flex items-center justify-center'}
+          >
+            <img
+              src={props.img}
+              alt={props.alt}
+              className="w-full h-full transition duration-500 ease-in-out scale-105 rounded-lg cursor-pointer brightness-75"
+            />
+          </Link>
           <div className="absolute justify-center flex flex-col items-center text-2xl text-slate-50 font-bold drop-shadow-[2px_2px_8px_#000000]">
             {' '}
             <p className="p-2">{props.title}</p>
@@ -54,7 +57,7 @@ const Product = (props: IProductProps) => {
               quick add to cart <i className="px-2 fa-solid fa-cart-plus"></i>
             </button>
           </div>
-        </a>
+        </>
       ) : (
         <img src={props.img} alt={props.alt} className="w-full h-full " />
       )}
