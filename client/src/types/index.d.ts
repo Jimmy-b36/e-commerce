@@ -24,4 +24,5 @@ export interface IProducts {
   size: string;
   category: string;
   popular: boolean;
+  createdAt: Date;
 }
