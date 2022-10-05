@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { IProducts } from '../../data/data';
+import { IProducts } from '../../types';
 
 interface IProductProps extends IProducts {
   isMobile?: boolean;
@@ -19,7 +19,7 @@ const Product = (props: IProductProps) => {
       onMouseLeave={handleMouseLeave}
     >
       {props.isMobile ? (
-        <>
+        <a href={`/product/${props.id}`}>
           <img
             src={props.img}
             alt={props.alt}
@@ -34,9 +34,12 @@ const Product = (props: IProductProps) => {
               add to cart <i className="px-2 fa-solid fa-cart-plus"></i>
             </button>
           </div>
-        </>
+        </a>
       ) : isHovered ? (
-        <>
+        <a
+          href={`/product/${props.id}`}
+          className="flex items-center justify-center"
+        >
           <img
             src={props.img}
             alt={props.alt}
@@ -48,10 +51,10 @@ const Product = (props: IProductProps) => {
             <p className="p-2">{props.description}</p>
             <p className="p-2">${props.price}</p>
             <button className="m-2 btn text-slate-50">
-              add to cart <i className="px-2 fa-solid fa-cart-plus"></i>
+              quick add to cart <i className="px-2 fa-solid fa-cart-plus"></i>
             </button>
           </div>
-        </>
+        </a>
       ) : (
         <img src={props.img} alt={props.alt} className="w-full h-full " />
       )}
