@@ -13,7 +13,7 @@ const Login = () => {
           className="w-full max-w-xs m-2 input input-bordered"
         />
         <div className="flex flex-row">
-          <a href="" className="mx-3 mt-2 text-white btn">
+          <a href="/register" className="mx-3 mt-2 text-white btn">
             Sign up
           </a>
           <input
