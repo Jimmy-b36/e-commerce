@@ -17,10 +17,13 @@ const Products = () => {
     category: category,
     size: 'All sizes',
   });
+
   const [products, setProducts] = useState<IProducts[]>([]);
+
   const [sort, setSort] = useState<string | undefined>('newest');
   const [filteredProducts, setFilteredProducts] = useState<IProducts[]>([]);
 
+  productFilter(products, filters);
   useEffect(() => {
     (async () => {
       try {
@@ -35,6 +38,7 @@ const Products = () => {
 
   useEffect(() => {
     (async () => {
+
       const filtered = await productFilter(products, filters);
       setFilteredProducts(filtered);
     })().catch(console.error);
