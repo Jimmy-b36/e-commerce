@@ -1,5 +1,6 @@
 import Login from './Login';
 const NavBar = () => {
+  const user = false;
   return (
     <div className="navbar min-h-[5em] bg-primary text-primary-content ">
       <div className="navbar-start">
@@ -45,28 +46,33 @@ const NavBar = () => {
         </a>
       </div>
       <div className="navbar-end">
-        <div className="dropdown dropdown-end">
-          <label
-            tabIndex={0}
-            className="hidden m-1 text-white btn md:flex lg:flex 2xl:flex bg-slate-600 hover:bg-slate-800"
-          >
-            Login/Sign up
-          </label>
-          <label
-            tabIndex={0}
-            className="flex px-5 m-1 text-white btn md:hidden lg:hidden 2xl:hidden "
-          >
-            <i className="fa-solid fa-user"></i>
-          </label>
-          <div
-            tabIndex={0}
-            className="dropdown-content card w-64 card-compact  p-2 shadow bg-[#E2443C] text-primary-content"
-          >
-            <div className="card-body ">
-              <Login />
+        {!user ? (
+          <div className="dropdown dropdown-end">
+            <label
+              tabIndex={0}
+              className="hidden m-1 text-white btn md:flex lg:flex 2xl:flex bg-slate-600 hover:bg-slate-800"
+            >
+              Login/Sign up
+            </label>
+            <label
+              tabIndex={0}
+              className="flex px-5 m-1 text-white btn md:hidden lg:hidden 2xl:hidden "
+            >
+              <i className="fa-solid fa-user"></i>
+            </label>
+            <div
+              tabIndex={0}
+              className="dropdown-content card w-64 card-compact  p-2 shadow bg-[#E2443C] text-primary-content"
+            >
+              <div className="card-body ">
+                <Login />
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <button className="mr-2 text-white btn">Sign out</button>
+        )}
+
         <div className="indicator">
           <span className="mr-3 indicator-item badge badge-secondary xs:mr-1">
             3
