@@ -15,7 +15,7 @@ export interface ICategories {
 }
 
 export interface IProducts {
-  id: number;
+  _id: string;
   img: string;
   title: string;
   description: string;
@@ -24,4 +24,19 @@ export interface IProducts {
   size: string;
   category: string;
   popular: boolean;
+  createdAt: Date;
+}
+
+export interface IReduxCartProduct {
+  _id?: number;
+  title?: string;
+  description?: string;
+  img?: string;
+  categories?: string[] | null;
+  size?: string[];
+  price?: number;
+  inStock?: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
+  quantity: number;
 }
