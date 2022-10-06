@@ -9,6 +9,7 @@ const productSchema = new mongoose.Schema(
     alt: { type: String, required: true },
     category: { type: Array, required: true },
     popular: { type: Boolean, default: false },
+    inStock: { type: Boolean, default: true },
   },
   { timestamps: true }
 );

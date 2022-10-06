@@ -1,11 +1,15 @@
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import Announcement from '../components/Announcement';
-import { IProducts, products } from '../data/data';
 import Newsletter from '../components/Newsletter';
+import Announcement from '../components/Announcement';
+import { products } from '../data/data';
+import { IProducts } from '../types';
+import { useParams } from 'react-router-dom';
 
 import { useState } from 'react';
 const Product = () => {
+  const { productId } = useParams<{ productId: string }>();
+  console.log('🚀 ~ Product ~ productId', productId);
   const [quantity, setQuantity] = useState<number>(1);
 
   const quantityHandler = (direction: string) => {
@@ -24,7 +28,7 @@ const Product = () => {
       <div>
         {products.map(
           (item: IProducts, index: number) =>
-            item.title === 'Van sticker' && (
+            item.id === Number(productId) && (
               <div
                 className="flex flex-col items-center justify-center w-full"
                 key={index}

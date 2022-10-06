@@ -1,29 +1,4 @@
-export interface ICarouselData {
-  id: number;
-  img: string;
-  title: string;
-  description: string;
-  season?: string;
-  alt: string;
-}
-
-export interface ICatagories {
-  id: number;
-  name: string;
-  img: string;
-  alt: string;
-}
-
-export interface IProducts {
-  id: number;
-  img: string;
-  title: string;
-  description: string;
-  price: number;
-  alt: string;
-  category: string;
-  popular: boolean;
-}
+import { ICarouselData, IProducts, ICategories } from '../types';
 
 const carousel: ICarouselData[] = [
   {
@@ -50,10 +25,10 @@ const carousel: ICarouselData[] = [
   },
 ];
 
-const catagories: ICatagories[] = [
+const catagories: ICategories[] = [
   {
     id: 1,
-    name: 'Sticker Packs',
+    name: 'Sticker packs',
     img: 'https://img.freepik.com/free-vector/naive-halloween-stickers-collection_52683-68866.jpg?w=1380&t=st=1663005053~exp=1663005653~hmac=0e3afd22fad557ade1965d131abc485ffd61e12f184846ec5b50c64babf07de6',
     alt: 'Sticker packs',
   },
@@ -65,7 +40,7 @@ const catagories: ICatagories[] = [
   },
   {
     id: 3,
-    name: 'Individual Stickers',
+    name: 'Single stickers',
     img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/cannon.jpg?raw=true',
     alt: 'IndividualStickers',
   },
@@ -77,40 +52,48 @@ const products: IProducts[] = [
     img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/kasturi-roy-caRKch3FR9Q-unsplash.jpg?raw=true',
     title: 'Sticker Pack',
     description: 'This is a sticker pack',
-    price: 10,
+    price: 5,
     alt: 'Sticker Pack',
+    size: 'M',
     category: 'Sticker packs',
     popular: true,
+    createdAt: new Date(2112, 9, 26),
   },
   {
     id: 2,
     img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/done-by-alex-gQMQjJiUGyo-unsplash.jpg?raw=true',
     title: 'Van sticker',
     description: 'This is a van sticker',
-    price: 10,
+    price: 11,
     alt: 'Van sticker',
+    size: 'L',
     category: 'Single stickers',
     popular: true,
+    createdAt: new Date(2064, 8, 31),
   },
   {
     id: 3,
     img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/mk-2-zzHJ3VSKrZg-unsplash%203.jpg?raw=true',
     title: 'Rocket sticker',
     description: 'This is a rocket sticker',
-    price: 10,
+    price: 14,
     alt: 'Rocket sticker',
+    size: 'S',
     category: 'Single stickers',
     popular: true,
+    createdAt: new Date(2088, 5, 22),
   },
   {
     id: 4,
     img: 'https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/mk-2-zzHJ3VSKrZg-unsplash%204.jpg?raw=true',
     title: 'Rad sticker',
     description: 'This is a rad sticker',
-    price: 10,
+    price: 12,
     alt: 'Rad sticker',
+    size: 'M',
     category: 'Single stickers',
     popular: false,
+    createdAt: new Date(2096, 6, 27),
   },
   {
     id: 5,
@@ -119,8 +102,10 @@ const products: IProducts[] = [
     description: 'This is a pineapple sticker',
     price: 10,
     alt: 'Pineapple sticker',
+    size: 'M',
     category: 'Single stickers',
     popular: false,
+    createdAt: new Date(2105, 7, 6),
   },
 ];
 

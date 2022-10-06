@@ -1,5 +1,5 @@
 import { products } from '../../data/data';
-import { IProducts } from '../../data/data';
+import { IProducts } from '../../types';
 import Product from './Product';
 import { useState, useEffect } from 'react';
 const PopularProducts = () => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { carousel } from '../data/data';
-import { ICarouselData } from '../data/data';
+import { ICarouselData } from '../types';
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
