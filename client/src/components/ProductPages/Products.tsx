@@ -13,11 +13,15 @@ const Products = () => {
     size: 'All sizes',
   });
 
-  const [sort, setSort] = useState<string | undefined>('none');
+  const [sort, setSort] = useState<string | undefined>('newest');
   const [filteredProducts, setFilteredProducts] = useState<IProducts[]>([]);
 
+  productFilter(products, filters);
   useEffect(() => {
-    setFilteredProducts(productFilter(products, filters));
+    (async () => {
+      const filtered = await productFilter(products, filters);
+      setFilteredProducts(filtered);
+    })().catch(console.error);
   }, [filters]);
 
   useEffect(() => {
@@ -33,7 +37,6 @@ const Products = () => {
     const type = (e.target as HTMLInputElement).name;
     const value = (e.target as HTMLInputElement).value;
     setFilters({ ...filters, [type]: value });
-    if (type === 'sortBy') setSort(value);
   };
 
   useEffect(() => {
@@ -56,6 +59,7 @@ const Products = () => {
                 className="w-full max-w-xs ml-10 select"
                 name="category"
                 onChange={onChangeHandler}
+                defaultValue={category}
               >
                 <option disabled>Category</option>
                 <option value={'All products'}>All products</option>
@@ -87,13 +91,13 @@ const Products = () => {
             <select
               className="w-full max-w-xs ml-10 select"
               name="sortBy"
-              onChange={onChangeHandler}
+              onChange={e => setSort(e.target.value)}
+              defaultValue={'newest'}
             >
               <option disabled>Sort</option>
-              <option value={'none'}>None</option>
-              <option value={'priceasc'}>Price asc</option>
-              <option value={'pricedesc'}>Price desc</option>
               <option value={'newest'}>Newest</option>
+              <option value={'priceasc'}>Price (asc)</option>
+              <option value={'pricedesc'}>Price (desc)</option>
               <option value={'oldest'}>Oldest</option>
             </select>
           </div>
