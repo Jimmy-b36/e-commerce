@@ -11,6 +11,7 @@ const productRouter = (): IRouter => {
       description: req.body.description,
       img: req.body.img,
       price: req.body.price,
+      size: req.body.size,
       alt: req.body.alt,
       popular: req.body.popular,
       category: req.body.category,
@@ -45,7 +46,7 @@ const productRouter = (): IRouter => {
   );
 
   // GET ALL PRODUCTS
-  router.get('/', verifyTokenAdmin, async (req: Request, res: Response) => {
+  router.get('/', async (req: Request, res: Response) => {
     const qNew = req.query.new;
     const qCategory = req.query.category;
     try {
