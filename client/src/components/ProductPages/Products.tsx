@@ -1,23 +1,43 @@
 import Product from './Product';
-import { products } from '../../data/data';
+
 import { IProducts } from '../../types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { productFilter, productSorter } from '../../helpers/productFilter';
+import axios from 'axios';
+import { apiRequest } from '../../helpers/requestMethods';
 
 const Products = () => {
   const { category } = useParams<{ category: string }>();
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [filters, setFilters] = useState<{ category?: string; size?: string }>({
+  const [filters, setFilters] = useState<{
+    category?: string;
+    size?: string;
+  }>({
     category: category,
     size: 'All sizes',
   });
-
-  const [sort, setSort] = useState<string | undefined>('none');
+  const [products, setProducts] = useState<IProducts[]>([]);
+  const [sort, setSort] = useState<string | undefined>('newest');
   const [filteredProducts, setFilteredProducts] = useState<IProducts[]>([]);
 
   useEffect(() => {
-    setFilteredProducts(productFilter(products, filters));
+    (async () => {
+      try {
+        const res = await apiRequest('http://localhost:3001/api/product');
+        setProducts(res.data);
+        setFilteredProducts(productFilter(res.data, filters));
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const filtered = await productFilter(products, filters);
+      setFilteredProducts(filtered);
+    })().catch(console.error);
   }, [filters]);
 
   useEffect(() => {
@@ -33,7 +53,6 @@ const Products = () => {
     const type = (e.target as HTMLInputElement).name;
     const value = (e.target as HTMLInputElement).value;
     setFilters({ ...filters, [type]: value });
-    if (type === 'sortBy') setSort(value);
   };
 
   useEffect(() => {
@@ -56,6 +75,7 @@ const Products = () => {
                 className="w-full max-w-xs ml-10 select"
                 name="category"
                 onChange={onChangeHandler}
+                defaultValue={category}
               >
                 <option disabled>Category</option>
                 <option value={'All products'}>All products</option>
@@ -87,13 +107,13 @@ const Products = () => {
             <select
               className="w-full max-w-xs ml-10 select"
               name="sortBy"
-              onChange={onChangeHandler}
+              onChange={e => setSort(e.target.value)}
+              defaultValue={'newest'}
             >
               <option disabled>Sort</option>
-              <option value={'none'}>None</option>
-              <option value={'priceasc'}>Price asc</option>
-              <option value={'pricedesc'}>Price desc</option>
               <option value={'newest'}>Newest</option>
+              <option value={'priceasc'}>Price (asc)</option>
+              <option value={'pricedesc'}>Price (desc)</option>
               <option value={'oldest'}>Oldest</option>
             </select>
           </div>
