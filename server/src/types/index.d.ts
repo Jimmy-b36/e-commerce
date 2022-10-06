@@ -21,6 +21,7 @@ export interface IProduct {
   description: string;
   img: string;
   price: number;
+  size: string;
   alt: string;
   category: [];
   popular: boolean;
