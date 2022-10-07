@@ -1,17 +1,13 @@
-// require('dotenv').config();
 import { useNavigate } from 'react-router-dom';
 import { FC, useState, useEffect } from 'react';
 import StripeCheckout, { Token } from 'react-stripe-checkout';
-const axios = require('axios');
-
-const STRIPE_PUBLIC =
-  'pk_test_51LnovJCiymmOLGsSXDobZwn7okbWKOe9tvoPEjIKNoAG80A1KcW01REQUFKUBkYDFrrzl343NwUMltgDr2BkHxkE005pnaC9sR';
-
+import { userRequest } from '../helpers/requestMethods';
+const STRIPE_PUBLIC = process.env.REACT_APP_STRIPE_PUBLIC as string;
 interface IPay {
   children: React.ReactNode;
   cart: {
     products: [{ productId: string; quantity: number }];
-    subTotal: number;
+    subtotal: number;
   };
 }
 
@@ -25,14 +21,16 @@ const Pay = ({ children, cart }: IPay) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const total = Number(((cart.subtotal * 1.12 + 5.7) * 100).toFixed(2));
     const makeRequest = async () => {
       try {
-        const res = await axios.post('http://localhost:3001/api/payment', {
+        const res = await userRequest.post('/payment', {
           tokenId: stripeToken!.id,
-          amount: cart.subTotal * 1.12 * 100,
+          amount: total,
         });
-        console.log(res.data);
-        return navigate('/success');
+        return navigate('/success', {
+          state: { stripeData: res.data, products: cart },
+        });
       } catch (err: any) {
         console.log(`there was an error with the request ${err.message}`);
         return;
@@ -48,15 +46,14 @@ const Pay = ({ children, cart }: IPay) => {
       ) : (
         <StripeCheckout
           name="Stickers"
-          image="http://deztub.nc/uvimot"
           billingAddress
           shippingAddress
           description={
             'Your total is $' +
-            ((cart.subTotal * 1.12) / 100).toFixed(2) +
+            (cart.subtotal * 1.12 + 5.7).toFixed(2) +
             ' CAD.'
           }
-          amount={cart.subTotal * 1.12}
+          amount={(cart.subtotal * 1.12 + 5.7) * 100}
           token={onToken}
           stripeKey={STRIPE_PUBLIC}
         />
