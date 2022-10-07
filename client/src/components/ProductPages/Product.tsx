@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Key } from 'react';
 import { Link } from 'react-router-dom';
 import { IProducts } from '../../types';
 
@@ -15,12 +15,12 @@ const Product = (props: IProductProps) => {
   return (
     <div
       className="flex flex-col items-center justify-center p-3 2xl:w-1/4 2xl:h-1/4 xl:w-1/3 lg:h-1/3 lg:w-1/3"
-      key={props.id}
+      key={props._id}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {props.isMobile ? (
-        <a href={`/product/${props.id}`}>
+        <a href={`/product/${props._id}`}>
           <img
             src={props.img}
             alt={props.alt}
@@ -39,7 +39,7 @@ const Product = (props: IProductProps) => {
       ) : isHovered ? (
         <>
           <Link
-            to={`/product/${props.id}`}
+            to={`/product/${props._id}`}
             className={'flex items-center justify-center'}
           >
             <img

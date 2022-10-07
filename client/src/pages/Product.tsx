@@ -2,15 +2,14 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Newsletter from '../components/Newsletter';
 import Announcement from '../components/Announcement';
-import { products } from '../data/data';
 import { IProducts } from '../types';
 import { useParams } from 'react-router-dom';
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { apiRequest } from '../helpers/requestMethods';
 const Product = () => {
   const { productId } = useParams<{ productId: string }>();
-  console.log('🚀 ~ Product ~ productId', productId);
   const [quantity, setQuantity] = useState<number>(1);
+  const [products, setProducts] = useState<IProducts[]>([]);
 
   const quantityHandler = (direction: string) => {
     let newQuantity = quantity;
@@ -21,6 +20,19 @@ const Product = () => {
       quantity <= 1 ? (newQuantity = 1) : setQuantity(newQuantity - 1);
     }
   };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await apiRequest('http://localhost:3001/api/product');
+        setProducts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
+
+  const handleClick = (e: any) => {};
   return (
     <>
       <Announcement />
@@ -28,7 +40,7 @@ const Product = () => {
       <div>
         {products.map(
           (item: IProducts, index: number) =>
-            item.id === Number(productId) && (
+            item._id === productId && (
               <div
                 className="flex flex-col items-center justify-center w-full"
                 key={index}
@@ -63,7 +75,10 @@ const Product = () => {
                             <i className="pl-2 pr-10 fa-solid fa-plus xs:pr-0 sm:pr-0 "></i>
                           </button>
                         </div>
-                        <button className="btn text-slate-50">
+                        <button
+                          className="btn text-slate-50"
+                          onClick={handleClick}
+                        >
                           add to cart{' '}
                           <i className="px-2 fa-solid fa-cart-plus"></i>
                         </button>

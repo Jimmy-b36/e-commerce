@@ -1,9 +1,10 @@
-import { products } from '../../data/data';
 import { IProducts } from '../../types';
 import Product from './Product';
 import { useState, useEffect } from 'react';
+import { apiRequest } from '../../helpers/requestMethods';
 const PopularProducts = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [products, setProducts] = useState<IProducts[]>([]);
 
   const handleResize = () => {
     window.innerWidth >= 1025 ? setIsMobile(false) : setIsMobile(true);
@@ -11,6 +12,17 @@ const PopularProducts = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await apiRequest('http://localhost:3001/api/product');
+        setProducts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
   }, []);
 
   return (
