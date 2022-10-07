@@ -1,5 +1,9 @@
 import Login from './Login';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 const NavBar = () => {
+  const quantity = useSelector((state: any) => state.cart.quantity);
+
   const user = false;
   return (
     <div className="navbar min-h-[5em] bg-primary text-primary-content ">
@@ -72,15 +76,16 @@ const NavBar = () => {
         ) : (
           <button className="mr-2 text-white btn">Sign out</button>
         )}
-
-        <div className="indicator">
-          <span className="mr-3 indicator-item badge badge-secondary xs:mr-1">
-            3
-          </span>
-          <button className="px-5 mr-2 text-white btn xs:mr-0 bg-slate-600 hover:bg-slate-800">
-            <i className="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
+        <Link to={'/checkout'}>
+          <div className="indicator">
+            <span className="mr-3 indicator-item badge badge-secondary xs:mr-1">
+              {quantity}
+            </span>
+            <button className="px-5 mr-2 text-white btn xs:mr-0 bg-slate-600 hover:bg-slate-800">
+              <i className="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+        </Link>
         <img
           className="h-10 w-auto mb-[3px] rounded-md xs:hidden s:hidden"
           src="https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/logo-white.png?raw=true"
