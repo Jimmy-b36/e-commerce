@@ -28,7 +28,9 @@ const Pay = ({ children, cart }: IPay) => {
           tokenId: stripeToken!.id,
           amount: total,
         });
-        return navigate('/success');
+        return navigate('/success', {
+          state: { stripeData: res.data, products: cart },
+        });
       } catch (err: any) {
         console.log(`there was an error with the request ${err.message}`);
         return;
