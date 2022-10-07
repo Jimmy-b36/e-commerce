@@ -9,7 +9,6 @@ const Success = () => {
   const data = useLocation();
   const stripeData = data.state.stripeData;
   const cart = data.state.products;
-  console.log('🚀 ~ Success ~ cart', cart);
   // const currentUser = useSelector((state: any) => state.user.currentUser);
   const [orderId, setOrderId] = useState<string | null>(null);
 
