@@ -6,6 +6,8 @@ import {
 } from './userRedux';
 import { apiRequest } from '../helpers/requestMethods';
 import { Dispatch } from '@reduxjs/toolkit';
+
+// these functions are to begin the authentication process
 export const login = async (dispatch: Dispatch, user: any) => {
   dispatch(loginStart());
   try {
