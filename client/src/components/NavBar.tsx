@@ -1,10 +1,17 @@
 import Login from './Login';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../redux/apiCalls';
 import { Link } from 'react-router-dom';
+import React from 'react';
+import { logoutStart } from '../redux/userRedux';
 const NavBar = () => {
   const user = useSelector((state: any) => state.user);
+  const dispatch = useDispatch();
 
-  const handleSignout = () => {};
+  const handleSignout = (e: React.FormEvent) => {
+    e.preventDefault();
+    logout(dispatch);
+  };
   const quantity = useSelector((state: any) => state.cart.quantity);
   return (
     <div className="navbar min-h-[5em] bg-primary text-primary-content ">
