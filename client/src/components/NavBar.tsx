@@ -2,9 +2,10 @@ import Login from './Login';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 const NavBar = () => {
-  const quantity = useSelector((state: any) => state.cart.quantity);
+  const user = useSelector((state: any) => state.user);
 
-  const user = false;
+  const handleSignout = () => {};
+  const quantity = useSelector((state: any) => state.cart.quantity);
   return (
     <div className="navbar min-h-[5em] bg-primary text-primary-content ">
       <div className="navbar-start">
@@ -50,7 +51,7 @@ const NavBar = () => {
         </a>
       </div>
       <div className="navbar-end">
-        {!user ? (
+        {!user.currentUser ? (
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
@@ -74,7 +75,12 @@ const NavBar = () => {
             </div>
           </div>
         ) : (
-          <button className="mr-2 text-white btn">Sign out</button>
+          <>
+            <p className="text-2xl">{user.currentUser?.email}</p>
+            <button className="mr-2 text-white btn" onClick={handleSignout}>
+              Sign out
+            </button>
+          </>
         )}
         <Link to={'/checkout'}>
           <div className="indicator">
