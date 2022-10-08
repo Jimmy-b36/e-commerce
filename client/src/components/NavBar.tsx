@@ -1,6 +1,11 @@
 import Login from './Login';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 const NavBar = () => {
-  const user = false;
+  const user = useSelector((state: any) => state.user);
+
+  const handleSignout = () => {};
+  const quantity = useSelector((state: any) => state.cart.quantity);
   return (
     <div className="navbar min-h-[5em] bg-primary text-primary-content ">
       <div className="navbar-start">
@@ -46,7 +51,7 @@ const NavBar = () => {
         </a>
       </div>
       <div className="navbar-end">
-        {!user ? (
+        {!user.currentUser ? (
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
@@ -70,17 +75,23 @@ const NavBar = () => {
             </div>
           </div>
         ) : (
-          <button className="mr-2 text-white btn">Sign out</button>
+          <>
+            <p className="text-2xl">{user.currentUser?.email}</p>
+            <button className="mr-2 text-white btn" onClick={handleSignout}>
+              Sign out
+            </button>
+          </>
         )}
-
-        <div className="indicator">
-          <span className="mr-3 indicator-item badge badge-secondary xs:mr-1">
-            3
-          </span>
-          <button className="px-5 mr-2 text-white btn xs:mr-0 bg-slate-600 hover:bg-slate-800">
-            <i className="fa-solid fa-cart-shopping"></i>
-          </button>
-        </div>
+        <Link to={'/checkout'}>
+          <div className="indicator">
+            <span className="mr-3 indicator-item badge badge-secondary xs:mr-1">
+              {quantity}
+            </span>
+            <button className="px-5 mr-2 text-white btn xs:mr-0 bg-slate-600 hover:bg-slate-800">
+              <i className="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+        </Link>
         <img
           className="h-10 w-auto mb-[3px] rounded-md xs:hidden s:hidden"
           src="https://github.com/Jimmy-b36/e-commerce/blob/main/client/src/assets/images/logo-white.png?raw=true"

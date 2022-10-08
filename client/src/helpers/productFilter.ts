@@ -8,18 +8,20 @@ const productFilter = (
   if (filter.category === 'All products' && filter.size === 'All sizes')
     return products;
 
+  console.log('before');
+
   if (filter.category === 'All products')
     return products.filter(product => product.size === filter.size);
+  console.log('after');
 
   if (filter.size === 'All sizes')
     return products.filter(product =>
       product.category.includes(filter.category || '')
     );
 
-  return products.filter((item: any) =>
-    Object.entries(filter).every(([key, value]) => {
-      item[key].includes(value);
-    })
+  return products.filter(
+    (product: any) =>
+      product.category.includes(filter.category) && product.size === filter.size
   );
 };
 

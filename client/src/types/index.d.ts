@@ -15,6 +15,7 @@ export interface ICategories {
 }
 
 export interface IProducts {
+  quantity: ReactNode;
   _id: string;
   img: string;
   title: string;
@@ -22,21 +23,22 @@ export interface IProducts {
   price: number;
   alt: string;
   size: string;
-  category: string;
+  category: string[];
   popular: boolean;
   createdAt: Date;
 }
 
 export interface IReduxCartProduct {
-  _id?: number;
-  title?: string;
-  description?: string;
-  img?: string;
-  categories?: string[] | null;
-  size?: string[];
-  price?: number;
-  inStock?: boolean;
-  createdAt?: Date;
-  updatedAt?: Date;
+  _id: string;
+  title: string;
+  alt: string;
+  description: string;
+  img: string;
+  categories: string[] | null;
+  size: string[];
+  price: number;
+  inStock: boolean;
+  createdAt: Date;
+  updatedAt: Date;
   quantity: number;
 }

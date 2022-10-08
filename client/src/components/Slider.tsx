@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { carousel } from '../data/data';
 import { ICarouselData } from '../types';
 
@@ -72,7 +73,7 @@ const Slider = () => {
                 {item.description}
               </div>
               <button className="z-20 w-1/2 text-white btn bg-slate-600 hover:bg-slate-800">
-                Shop now
+                <Link to={'/products/All products'}>Shop now</Link>
               </button>
             </div>
           </div>

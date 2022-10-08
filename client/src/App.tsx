@@ -28,20 +28,7 @@ function App() {
           element={user ? <Navigate to="/" replace /> : <Registration />}
         />
 
-        <Route
-          path="/pay"
-          element={
-            <Pay
-              children={null}
-              cart={{
-                products: [{ productId: '12', quantity: 5 }],
-                subTotal: 1000,
-              }}
-            />
-          }
-        />
-        <Route path="/cart" />
-        {/* <Cart /> */}
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/success" element={<Success />} />
       </Routes>
     </Router>

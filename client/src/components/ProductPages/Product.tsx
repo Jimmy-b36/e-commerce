@@ -1,6 +1,8 @@
-import { useState, useEffect, Key } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IProducts } from '../../types';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../redux/cartRedux';
 
 interface IProductProps extends IProducts {
   isMobile?: boolean;
@@ -8,10 +10,16 @@ interface IProductProps extends IProducts {
 
 const Product = (props: IProductProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const { isMobile, ...product } = props;
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
+  const handleClick = () => {
+    const { isMobile, quantity, ...product } = props;
+    dispatch(addProduct({ ...product, quantity: 1 } as any));
+  };
   return (
     <div
       className="flex flex-col items-center justify-center p-3 2xl:w-1/4 2xl:h-1/4 xl:w-1/3 lg:h-1/3 lg:w-1/3"
@@ -19,7 +27,7 @@ const Product = (props: IProductProps) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {props.isMobile ? (
+      {isMobile ? (
         <a href={`/product/${props._id}`}>
           <img
             src={props.img}
@@ -53,7 +61,7 @@ const Product = (props: IProductProps) => {
             <p className="p-2">{props.title}</p>
             <p className="p-2">{props.description}</p>
             <p className="p-2">${props.price}</p>
-            <button className="m-2 btn text-slate-50">
+            <button className="m-2 btn text-slate-50" onClick={handleClick}>
               quick add to cart <i className="px-2 fa-solid fa-cart-plus"></i>
             </button>
           </div>
