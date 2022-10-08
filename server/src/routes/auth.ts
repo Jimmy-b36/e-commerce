@@ -61,7 +61,7 @@ const authRouter = (): IRouter => {
       }
       return res.status(500).send('password incorrect');
     } catch (err) {
-      return res.status(500).send(err);
+      return res.status(500).send(`error logging in ${err}`);
     }
   });
   return router;
