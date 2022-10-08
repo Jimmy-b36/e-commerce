@@ -12,7 +12,6 @@ const Product = (props: IProductProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const dispatch = useDispatch();
   const { isMobile, ...product } = props;
-  console.log('🚀 ~ Product ~ product', product);
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
