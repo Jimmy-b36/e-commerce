@@ -1,9 +1,15 @@
 import Login from './Login';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../redux/apiCalls';
-import { Link } from 'react-router-dom';
-import React from 'react';
+import { Link, Navigate } from 'react-router-dom';
+import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const NavBar = () => {
+  const [searchValue, setSearchValue] = useState('');
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+  const searchRef = useRef(null);
   const user = useSelector((state: any) => state.user);
   const dispatch = useDispatch();
 
@@ -12,8 +18,15 @@ const NavBar = () => {
     logout(dispatch);
   };
 
-  const handleSearch = (e: React.FormEvent) => {
-    //not implemented yet
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const res = await axios.get(`/api/product/search/${searchValue}`);
+      setError(false);
+      navigate(`/product/${res.data[0]._id}`);
+    } catch (err: any) {
+      setError(true);
+    }
   };
   const quantity = useSelector((state: any) => state.cart.quantity);
   return (
@@ -21,14 +34,18 @@ const NavBar = () => {
       <div className="navbar-start">
         {/* Responsive */}
         <div className="dropdown ">
-          <label tabIndex={0} className="btn lg:hidden 2xl:hidden">
+          <label
+            tabIndex={0}
+            className="btn lg:hidden 2xl:hidden"
+            onClick={handleSearch}
+          >
             <i className="fa-solid fa-magnifying-glass"></i>
           </label>
           <ul
             tabIndex={0}
             className="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 text-slate-500"
           >
-            <form action="" method="get">
+            <form ref={searchRef} onSubmit={handleSearch} method="get">
               <input
                 type="text"
                 placeholder="Search for Stickers"
@@ -42,17 +59,22 @@ const NavBar = () => {
           htmlFor=""
           className="max-w-xs lg:input-group 2xl:input-group xs:nav-bar-end text-slate-600"
         >
-          <span className="hidden lg:flex 2xl:flex bg-slate-600">
+          <span
+            className="hidden lg:flex 2xl:flex bg-slate-600"
+            onClick={handleSearch}
+          >
             <i className="fa-solid fa-magnifying-glass "></i>
           </span>
-          <form onSubmit={handleSearch} method="get">
+          <form ref={searchRef} onSubmit={handleSearch} method="get">
             <input
               type="text"
               placeholder="Search for Stickers"
               className="hidden w-full max-w-xs bg-white input md:hidden lg:flex 2xl:flex xs:nav-bar-end text-slate-600"
+              onChange={e => setSearchValue(e.target.value)}
             />
           </form>
         </label>
+        {error && <span className="-mr-5 ">Product not found</span>}
       </div>
 
       <div className="flex ml-0 navbar-center xs:justify-start xs:-ml-12 text-slate-200">
