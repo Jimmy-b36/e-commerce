@@ -24,8 +24,6 @@ Step 3: Go to http://localhost:3000 to start shopping.
 ### Register & Login
 
 ![Register](https://github.com/Jimmy-b36/e-commerce/blob/main/screenshots/Screenshot%202022-10-11%20at%2011.53.53%20AM.png)
-![Register - success]
-![Register - unmatched password]
 ![Login](https://github.com/Jimmy-b36/e-commerce/blob/main/screenshots/Screenshot%202022-10-11%20at%2011.54.02%20AM.png)
 
 ### Products
