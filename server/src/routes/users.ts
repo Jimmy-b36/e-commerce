@@ -10,7 +10,6 @@ import { IRouter, Request, Response } from 'express';
 
 //UPDATE USER
 const userRouter = (): IRouter => {
-  // ! add verifyToken middleware
   router.patch(
     '/:id',
     verifyTokenAndAuthorization,
@@ -22,7 +21,6 @@ const userRouter = (): IRouter => {
           Number(process.env.SALT)
         );
       }
-      req.body.isAdmin = undefined;
       // If everything is authorized then try to update the user
       try {
         const updatedUser = await User.findByIdAndUpdate(
