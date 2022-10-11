@@ -1,15 +1,16 @@
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { userRequest } from '../helpers/requestMethods';
-import { useSelector } from 'react-redux';
+import { clearCart } from '../redux/cartRedux';
 
 const Success = () => {
   const data = useLocation();
   const stripeData = data.state.stripeData;
   const cart = data.state.products;
-  // const currentUser = useSelector((state: any) => state.user.currentUser);
+  const dispatch = useDispatch();
   const [orderId, setOrderId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -25,6 +26,7 @@ const Success = () => {
           address: stripeData.billing_details.address,
         });
         setOrderId(res.data._id);
+        dispatch(clearCart());
       } catch (err) {
         console.error(err);
       }

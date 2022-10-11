@@ -4,7 +4,7 @@ import Announcement from '../components/Announcement';
 import { useRef, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../redux/apiCalls';
 
 interface IForm {

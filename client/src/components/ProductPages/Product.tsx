@@ -11,7 +11,7 @@ interface IProductProps extends IProducts {
 const Product = (props: IProductProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const dispatch = useDispatch();
-  const { isMobile, ...product } = props;
+  const { isMobile } = props;
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);

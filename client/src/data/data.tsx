@@ -1,4 +1,4 @@
-import { ICarouselData, IProducts, ICategories } from '../types';
+import { ICarouselData, ICategories } from '../types';
 
 const carousel: ICarouselData[] = [
   {

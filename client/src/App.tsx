@@ -11,7 +11,6 @@ import Product from './pages/Product';
 import Registration from './pages/Registration';
 import Checkout from './pages/Checkout';
 import Custom from './pages/Custom';
-import Pay from './components/Pay';
 import Success from './pages/Success';
 
 function App() {

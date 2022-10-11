@@ -4,7 +4,6 @@ import { IProducts } from '../../types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { productFilter, productSorter } from '../../helpers/productFilter';
-import axios from 'axios';
 import { apiRequest } from '../../helpers/requestMethods';
 
 const Products = () => {
@@ -38,7 +37,6 @@ const Products = () => {
 
   useEffect(() => {
     (async () => {
-
       const filtered = await productFilter(products, filters);
       setFilteredProducts(filtered);
     })().catch(console.error);
