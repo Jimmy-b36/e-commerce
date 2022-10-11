@@ -9,6 +9,11 @@ const cartSlice = createSlice({
     subtotal: 0,
   },
   reducers: {
+    clearCart: state => {
+      state.products = [];
+      state.quantity = 0;
+      state.subtotal = 0;
+    },
     addProduct: (
       state: {
         quantity: number;
@@ -27,5 +32,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addProduct } = cartSlice.actions;
+export const { addProduct, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
