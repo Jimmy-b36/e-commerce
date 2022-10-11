@@ -1,0 +1,6 @@
+SALT=[saltrounds for bcrypt]
+PORT=3001
+MONGO_DB=[Your Mongo db address]
+JWT_SECRET=[Your JWT secret key]
+STRIPE_SECRET=[Your stripe secret key]
+STRIPE_PUBLIC=[your stripe public key]
