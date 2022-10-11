@@ -1,10 +1,60 @@
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Announcement from '../components/Announcement';
+import { useRef, useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../redux/apiCalls';
+
+interface IForm {
+  email: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  password: string | null;
+  passwordConfirmation: string | null;
+}
 
 const Registration = () => {
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [error, setError] = useState<boolean>(false);
+  const [emailError, setEmailErrorMessage] = useState<boolean>(false);
+  const [passError, setPassError] = useState<boolean>(false);
+  const [userForm, setUserForm] = useState<IForm>({
+    email: null,
+    firstName: null,
+    lastName: null,
+    password: null,
+    passwordConfirmation: null,
+  });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const originalForm = useRef<HTMLFormElement>(null);
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    for (let key in userForm) {
+      if (userForm[key as keyof typeof userForm] === null) {
+        setError(true);
+        return;
+      }
+      if (userForm.password !== userForm.passwordConfirmation) {
+        setPassError(true);
+        return;
+      }
+    }
+    try {
+      await axios.put('/api/auth/register', userForm);
+      originalForm.current?.reset();
+      navigate('/');
+    } catch (err: any) {
+      return setEmailErrorMessage(true);
+    }
+    login(dispatch, { email: userForm.email, password: userForm.password });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setUserForm({ ...userForm, [e.target.name]: e.target.value });
   };
   return (
     <div>
@@ -20,37 +70,62 @@ const Registration = () => {
               <div className="flex justify-center text-2xl card-header">
                 Create an account
               </div>
-              <form onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit} ref={originalForm}>
                 <label className="label"></label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
                   className="w-full input input-bordered"
+                  onChange={handleChange}
                 />
                 <label className="label"></label>
                 <input
                   type="text"
+                  name="firstName"
                   placeholder="First name"
                   className="w-full input input-bordered"
+                  onChange={handleChange}
                 />
                 <label className="label"></label>
                 <input
                   type="text"
+                  name="lastName"
                   placeholder="Last name"
                   className="w-full input input-bordered"
+                  onChange={handleChange}
                 />
                 <label className="label"></label>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password"
+                  name="password"
                   className="w-full input input-bordered"
+                  onChange={handleChange}
                 />
                 <label className="label"></label>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password confirmation"
+                  name="passwordConfirmation"
                   className="w-full input input-bordered"
+                  onChange={handleChange}
                 />
+                {emailError && (
+                  <p className="text-center text-red-500">
+                    A user with that email already exists
+                  </p>
+                )}
+                {error && (
+                  <p className="flex justify-center text-red-500">
+                    Please fill out all fields
+                  </p>
+                )}
+                {passError && (
+                  <p className="flex justify-center text-red-500">
+                    Passwords do not match
+                  </p>
+                )}
                 <div className="flex items-center justify-center">
                   <input
                     type="submit"
