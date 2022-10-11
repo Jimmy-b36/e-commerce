@@ -81,6 +81,18 @@ const productRouter = (): IRouter => {
     }
   });
 
+  router.get('/search/:name', async (req: Request, res: Response) => {
+    console.log(req.params.name);
+    try {
+      let product = await Product.find({
+        title: req.params.name.toLowerCase(),
+      });
+      return res.status(200).send(product);
+    } catch (err: any) {
+      return res.status(500).send(`Product not found ${err.message}`);
+    }
+  });
+
   //GET PRODUCT STATS
   router.get(
     '/stats',
