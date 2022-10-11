@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IReduxCartProduct } from '../types';
 
 const userSlice = createSlice({
   name: 'user',
