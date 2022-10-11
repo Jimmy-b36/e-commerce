@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/apiCalls';
@@ -8,12 +9,22 @@ const Login = () => {
   const dispatch = useDispatch();
   let { isFetching, error } = useSelector((state: any) => state.user);
   const form = useRef(null);
-  const handleClick = (e: React.FormEvent) => {
+  const handleClick = async (e: React.FormEvent) => {
     e.preventDefault();
-    login(dispatch, { email, password });
-    setEmail('');
-    setPassword('');
-    error = false;
+    try {
+      const res = await axios.post('/api/auth/login', {
+        email,
+        password,
+      });
+
+      login(dispatch, { email, password });
+      setEmail('');
+      setPassword('');
+      error = false;
+    } catch (err) {
+      console.log(err);
+      error = true;
+    }
   };
 
   return (
@@ -54,7 +65,7 @@ const Login = () => {
             email or password incorrect
           </div>
         )}
-        <a href="" className="mt-2 underline">
+        <a href="/register" className="mt-2 underline">
           Forgot password?
         </a>
       </form>
