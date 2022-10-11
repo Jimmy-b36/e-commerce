@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../redux/apiCalls';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { logoutStart } from '../redux/userRedux';
 const NavBar = () => {
   const user = useSelector((state: any) => state.user);
   const dispatch = useDispatch();
@@ -11,6 +10,10 @@ const NavBar = () => {
   const handleSignout = (e: React.FormEvent) => {
     e.preventDefault();
     logout(dispatch);
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    //not implemented yet
   };
   const quantity = useSelector((state: any) => state.cart.quantity);
   return (
@@ -42,7 +45,7 @@ const NavBar = () => {
           <span className="hidden lg:flex 2xl:flex bg-slate-600">
             <i className="fa-solid fa-magnifying-glass "></i>
           </span>
-          <form action="" method="get">
+          <form onSubmit={handleSearch} method="get">
             <input
               type="text"
               placeholder="Search for Stickers"
@@ -83,7 +86,7 @@ const NavBar = () => {
           </div>
         ) : (
           <>
-            <p className="text-2xl">{user.currentUser?.email}</p>
+            <p className="pr-2 text-xl">{user.currentUser?.email}</p>
             <button className="mr-2 text-white btn" onClick={handleSignout}>
               Sign out
             </button>
