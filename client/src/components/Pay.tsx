@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { FC, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import StripeCheckout, { Token } from 'react-stripe-checkout';
 import { userRequest } from '../helpers/requestMethods';
 const STRIPE_PUBLIC = process.env.REACT_APP_STRIPE_PUBLIC as string;
@@ -28,6 +28,7 @@ const Pay = ({ children, cart }: IPay) => {
           tokenId: stripeToken!.id,
           amount: total,
         });
+
         return navigate('/success', {
           state: { stripeData: res.data, products: cart },
         });
@@ -56,7 +57,9 @@ const Pay = ({ children, cart }: IPay) => {
           amount={(cart.subtotal * 1.12 + 5.7) * 100}
           token={onToken}
           stripeKey={STRIPE_PUBLIC}
-        />
+        >
+          {children}
+        </StripeCheckout>
       )}
     </div>
   );

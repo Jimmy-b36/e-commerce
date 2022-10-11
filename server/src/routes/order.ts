@@ -9,7 +9,7 @@ import { IRouter, Request, Response } from 'express';
 import { IOrder } from '../types';
 
 const orderRouter = (): IRouter => {
-  router.post('/', verifyToken, async (req: Request, res: Response) => {
+  router.post('/', async (req: Request, res: Response) => {
     const newOrder: IOrder = await new Order(req.body);
     try {
       const order: IOrder = await newOrder.save();
