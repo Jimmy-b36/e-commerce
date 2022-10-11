@@ -13,6 +13,7 @@ const authRouter = (): IRouter => {
   });
 
   router.put('/register', async (req: Request, res: Response) => {
+    console.log(req.body);
     const newUser: IUser = await new User({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -34,9 +35,8 @@ const authRouter = (): IRouter => {
       // return access token & login information
       const { password, ...userObj } = user._doc;
       return res.status(200).send({ ...userObj, accessToken });
-    } catch (err) {
-      console.log('email already exists');
-      return res.status(500).send(err);
+    } catch (err: any) {
+      return res.status(500).send(`email already exists ${err.message}`);
     }
   });
 
