@@ -24,6 +24,7 @@ Step 3: Go to http://localhost:3000 to start shopping.
 ### Register & Login
 
 ![Register](https://github.com/Jimmy-b36/e-commerce/blob/main/screenshots/Screenshot%202022-10-11%20at%2011.53.53%20AM.png)
+
 ![Login](https://github.com/Jimmy-b36/e-commerce/blob/main/screenshots/Screenshot%202022-10-11%20at%2011.54.02%20AM.png)
 
 ### Products
@@ -34,5 +35,7 @@ Step 3: Go to http://localhost:3000 to start shopping.
 ### Cart and Payment
 
 ![Cart](https://github.com/Jimmy-b36/e-commerce/blob/main/screenshots/Screenshot%202022-10-11%20at%2011.36.13%20AM.png)
+![Stripe Payment](https://github.com/Jimmy-b36/e-commerce/blob/main/screenshots/Screenshot%202022-10-11%20at%2012.19.24%20PM.png)
+![Stripe Payment - credit card](https://github.com/Jimmy-b36/e-commerce/blob/main/screenshots/Screenshot%202022-10-11%20at%2012.19.35%20PM.png)
 
 ## Happy shopping!
