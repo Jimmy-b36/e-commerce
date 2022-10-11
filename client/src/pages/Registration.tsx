@@ -16,9 +16,11 @@ interface IForm {
 }
 
 const Registration = () => {
-  const [error, setError] = useState<boolean>(false);
-  const [emailError, setEmailErrorMessage] = useState<boolean>(false);
-  const [passError, setPassError] = useState<boolean>(false);
+  const [error, setError] = useState<{
+    emailError: boolean;
+    passError: boolean;
+    formError: boolean;
+  }>({ emailError: false, passError: false, formError: false });
   const [userForm, setUserForm] = useState<IForm>({
     email: null,
     firstName: null,
@@ -34,20 +36,21 @@ const Registration = () => {
     e.preventDefault();
     for (let key in userForm) {
       if (userForm[key as keyof typeof userForm] === null) {
-        setError(true);
+        setError({ ...error, formError: true });
         return;
       }
       if (userForm.password !== userForm.passwordConfirmation) {
-        setPassError(true);
+        setError({ ...error, passError: true });
         return;
       }
     }
     try {
       await axios.put('/api/auth/register', userForm);
       originalForm.current?.reset();
+      setError({ passError: false, emailError: false, formError: false });
       navigate('/');
     } catch (err: any) {
-      return setEmailErrorMessage(true);
+      return setError({ ...error, emailError: true });
     }
     login(dispatch, { email: userForm.email, password: userForm.password });
   };
@@ -111,17 +114,17 @@ const Registration = () => {
                   className="w-full input input-bordered"
                   onChange={handleChange}
                 />
-                {emailError && (
+                {error.emailError && (
                   <p className="text-center text-red-500">
                     A user with that email already exists
                   </p>
                 )}
-                {error && (
+                {error.formError && (
                   <p className="flex justify-center text-red-500">
                     Please fill out all fields
                   </p>
                 )}
-                {passError && (
+                {error.passError && (
                   <p className="flex justify-center text-red-500">
                     Passwords do not match
                   </p>
